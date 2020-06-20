@@ -1,0 +1,34 @@
+=== var vs let
+
+==== scoping
+`var` is scoped to the function body. +
+`let` is scoped to the block.
+
+==== hoisting
+`var` is hoisted : initialized with `undefined` before the code is run. +
+`let` is not hoisted : accessing before initialization `-> ReferenceError`.
+
+==== global object property
+At the top level, let, unlike var, does not create a property on the global object:
+
+[source,js]
+var foo = "Foo";  // globally scoped
+let bar = "Bar"; // globally scoped
+console.log(window.foo); // Foo
+console.log(window.bar); // undefined
+
+=== redeclaration
+In strict mode, var will let you re-declare the same variable in the same scope
+while let raises a SyntaxError.
+
+[source,js]
+'use strict';
+var foo = "foo1";
+var foo = "foo2"; // No problem, 'foo' is replaced.
+let bar = "bar1";
+let bar = "bar2"; // SyntaxError: Identifier 'bar' has already been declared
+
+
+=== 013 inheritance
+In Javascript, there is no class inheritance. +
+Instead objects can inherit directly from other objects by setting `\\__proto__` property.

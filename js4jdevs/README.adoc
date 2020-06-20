@@ -1,0 +1,20 @@
+== Overview
+
+*  Objects Only, No Classes
+*  Functions are just Values
+*  The 'this' Keyword
+*  Classic vs Prototypal Inheritance
+*  Constructors vs Constructor Functions
+*  Closures vs Lambdas
+*  Encapsulation and Modules
+*  Block Scope and Hoisting
+
+=== Objects Only, No Classes
+
+Javascript objects are just like a Java HashMap of related properties, where the keys are Strings only. +
+This means that a Javascript object is just a multi-level 'hash map' of key/value pairs, with no class definition needed.
+
+=== Functions are just Values
+Functions in Javascript are just values of type Function, it's a simple as that! Take for example:
+
+https://blog.angular-university.io/javascript-for-java-developers/
