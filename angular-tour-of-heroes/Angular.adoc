@@ -11,7 +11,8 @@
 [cols="10,30"]
 |===
 | `ng serve` | compile and run
-| `ng generate component <name>` | 
+| `ng generate component <name>` |
+| `ng generate service <name>` |
 |===
 
 
@@ -32,3 +33,8 @@ Modules consist of one or more components. They do not control any html. Your mo
 Modules allow you to manage your components to bring modularity to your app.
 
 
+==== @Injectable
+Denotes a service which can be provided to (injected into) components.
+
+provideIn: 'root' +
+ angular creates a single shared instance, that can be injected into any class.
