@@ -1,3 +1,11 @@
+[options=header, cols = "10,4"]
+|===
+| Article | Bookmark
+| https://blog.angular-university.io/javascript-for-java-developers/ | @Execution Context
+
+|===
+
+
 == Overview
 
 *  Objects Only, No Classes
@@ -17,4 +25,16 @@ This means that a Javascript object is just a multi-level 'hash map' of key/valu
 === Functions are just Values
 Functions in Javascript are just values of type Function, it's a simple as that! Take for example:
 
+[source,js]
+var flyFunction = function() {
+    console.log('Flying like a bird!');
+};
+//
+superhero.fly = flyFunction;
+// usage
+superhero.fly();
+
 https://blog.angular-university.io/javascript-for-java-developers/
+
+
+=== this keyword usage

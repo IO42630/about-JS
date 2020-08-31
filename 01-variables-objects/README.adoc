@@ -5,6 +5,7 @@
 `let` is scoped to the block.
 
 ==== hoisting
+to hoist : hochheben, hissen. +
 `var` is hoisted : initialized with `undefined` before the code is run. +
 `let` is not hoisted : accessing before initialization `-> ReferenceError`.
 
@@ -18,8 +19,7 @@ console.log(window.foo); // Foo
 console.log(window.bar); // undefined
 
 === redeclaration
-In strict mode, var will let you re-declare the same variable in the same scope
-while let raises a SyntaxError.
+In `strict mode`, `var` allows redeclaration within the same scope, while `let` raises a `SyntaxError`.
 
 [source,js]
 'use strict';
@@ -29,6 +29,14 @@ let bar = "bar1";
 let bar = "bar2"; // SyntaxError: Identifier 'bar' has already been declared
 
 
+=== reassignment
+`const` behaves like `let` , except can't be reassigned.
+
+
+
 === 013 inheritance
 In Javascript, there is no class inheritance. +
-Instead objects can inherit directly from other objects by setting `\\__proto__` property.
+Instead, objects can inherit directly from other objects by setting `\\__proto__` property.
+If a property can't be found within an object, JS will look in the object referenced by `\\__proto__`.
+
+==== `new` keyword

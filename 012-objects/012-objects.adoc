@@ -1,1 +1,0 @@
-in JS abjects are Maps of properties.

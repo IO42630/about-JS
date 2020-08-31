@@ -26,3 +26,20 @@ function hello2() {
 
 hello1()
 hello2()
+
+
+function  scopeTest() {
+   var i = 2
+  { let i2 = 3}
+
+
+  {
+    let i2 = 2
+    //let i2 = 4 // let may not be redeclared
+  }
+
+  var i = 2 // var may be redeclared
+}
+
+
+scopeTest()

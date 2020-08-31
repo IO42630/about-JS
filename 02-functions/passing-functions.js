@@ -1,16 +1,17 @@
-var superman = {
+var bob = {
 
-    heroName: 'Superman',
+    personName: 'Bob',
 
     sayHello: function() {
-        console.log("Hello, I'm " + this.heroName );
+        console.log("Hello, I'm " + this.personName + ".");
     }
 };
 
-superman.sayHello();
+bob.sayHello();
 
-passedSayHello = superman.sayHello;
 
+// passedSayHello belongs to the global scope -
+passedSayHello = bob.sayHello;
 passedSayHello();
 
-passedSayHello.call(superman)
+passedSayHello.call(bob)

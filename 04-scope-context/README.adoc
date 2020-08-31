@@ -1,0 +1,73 @@
+[options=header, cols = "10,4"]
+|===
+| Article | Bookmark
+| https://scotch.io/tutorials/understanding-scope-in-javascript | @Execution Context
+
+|===
+
+
+
+==== Scope
+Scope determines visibility of objects (?is object the proper word here?).
+
+JS has two types of scopes:
+
+* Global Scope
+* Local Scope
+
+Variables defined inside a function are in local scope while variables defined outside of a function are in the global scope.
+Each function when invoked creates a new scope.
+
+Global scope exists while the application runs.
+Local Scope starts when a function is called, and ends when the function finished executing.
+
+{empty} +
+
+==== Global scope
+Default scope. `Window` in browser, sth. else in `node.js`.
+
+
+==== Local scope
+Variables defined inside a function are in the local scope.
+And they have a different scope for every call of that function.
+
+
+==== Block Statements
+Block statements like if and switch conditions or for and while loops, unlike functions, don't create a new scope.
+Variables defined inside of a block statement will remain in the scope they were already in.
+
+Contrary to the `var` keyword, the `let` and `const` keywords create a local scope inside blocks.
+
+=== Context
+Context is used to refer to the value of this in some particular part of your code.
+`this` : reference to the object that owns the execution of the code.
+
+In the global scope context is always the Window object.
+
+[cols="10,20"]
+|===
+| Context | value of `this` (in some part of the code)
+|===
+
+
+[source,js]
+console.log(this) // -> {}
+//
+function logFunc1(){console.log(this)}
+logFunc1() // -> Object [global]
+//
+class SomeObj{  logFunc2(){    console.log(this);  }}
+(new SomeObj).logFunc2(); // -> SomeObj {}
+
+{empty} +
+
+=== Execution Context
+Scope where code is executed.
+//TODO
+
+[source,js]
+executionContextObject = {
+    'scopeChain': {}, // contains its own variableObject and other variableObject of the parent execution contexts
+    'variableObject': {}, // contains function arguments, inner variable and function declarations
+    'this': valueOfThis
+}
