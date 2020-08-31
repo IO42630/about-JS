@@ -40,3 +40,19 @@ Instead, objects can inherit directly from other objects by setting `\\__proto__
 If a property can't be found within an object, JS will look in the object referenced by `\\__proto__`.
 
 ==== `new` keyword
+
+1. Creates a blank, plain JavaScript object;
+1. Links (sets the constructor of) this object to another object;
+1. Passes the newly created object from Step 1 as the this context;
+1. Returns this if the function doesn't return an object.
+
+
+
+=== Objects
+|===
+| `var foo = {}` | empty object
+| `var foo = "bar"` | simple value object
+| `var foo = {type:"bar",color:"red"}` | multiple value object
+|===
+
+in JS abjects are Maps of properties.

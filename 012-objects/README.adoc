@@ -1,8 +1,0 @@
-=== Objects
-|===
-| `var foo = {}` | empty object
-| `var foo = "bar"` | simple value object
-| `var foo = {type:"bar",color:"red"}` | multiple value object
-|===
-
-in JS abjects are Maps of properties.

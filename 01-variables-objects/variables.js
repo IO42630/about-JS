@@ -1,10 +1,8 @@
 
-// declaration
-let msg;
-// initialization
-msg = 'hello';
-// definiton
-let a = 'hello';
+
+let msg;          // declaration
+msg = 'hello';    // initialization
+let a = 'hello';  // definition
 
 //
 let b=3,c=4,d=5;
@@ -22,7 +20,10 @@ const asdf = 'asdf';
 
 
 
-//
+var person = {}; // empty object
+
+person.name = 'Bob';
+
 
 var object1 = {
     hello : 'world',

@@ -1,0 +1,27 @@
+== Functions
+
+=== function declaration
+
+
+=== function expression
+can omit function name to create anon functions.
+
+
+
+=== passing functions
+
+==== closures
+Unlike a plain function,
+a closure allows the function to access those captured variables through the closure's copies of their values or references,
+even when the function is invoked outside their scope.
+
+
+==== return
+a function without or with empty `return` returns `undefined`.
+
+{empty} +
+
+==== classes
+In JS classes are a special functions. +
+Classes have a constructor() method,
+that is called each time the class object is initialized (=called?).
