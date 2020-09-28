@@ -2,7 +2,7 @@
 
 ==== Notes for later
 |===
-| e2e folder | end-to-end tet project
+| e2e folder | end-to-end test project
 |===
 
 
@@ -10,10 +10,18 @@
 ===== Commands
 [cols="10,30"]
 |===
+| ng |
 | `ng serve` | compile and run
-| `ng generate component <name>` |
+| `ng generate component <name>` | creates a component in `src/app/<name>`.
 | `ng generate service <name>` |
 |===
+
+==== User Input
+* use ng event bindings to respond to any DOM event.
+* bind a DOM event
+** surround the DOM event name
+** assign a quoted template statement to it
+*** <button (click)="onClickMe()">Click me!</button>
 
 
 
@@ -23,9 +31,32 @@ The word uppercase in the interpolation binding, right after the pipe operator (
 [source,html]
 <h2>{{hero.name | uppercase}} Details</h2>
 
+{empty} +
+
+==== Directives
+
+
+
+{empty} +
+
+==== Components
+
+
+{empty} +
+
+==== Modules
+* Group of Components
+* @NgModule with the following parameters:
+** `imports`
+** `declarations`
+** `exports`
+** `providers`
+** `bootstrap`
+** `entryComponents`
+
+{empty} +
 
 ==== Modules vs Components
-
 
 Components control views (html). They also communicate with other components and services to bring functionality to your app.
 
@@ -36,5 +67,12 @@ Modules allow you to manage your components to bring modularity to your app.
 ==== @Injectable
 Denotes a service which can be provided to (injected into) components.
 
+
 provideIn: 'root' +
  angular creates a single shared instance, that can be injected into any class.
+
+{empty} +
+
+==== .spec.tx files
+The spec files are unit tests for your source files. +
+The convention for Angular applications is to have a .spec.ts file for each .ts file.
