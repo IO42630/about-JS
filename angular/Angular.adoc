@@ -76,3 +76,9 @@ provideIn: 'root' +
 ==== .spec.tx files
 The spec files are unit tests for your source files. +
 The convention for Angular applications is to have a .spec.ts file for each .ts file.
+
+{empty} +
+{empty} +
+
+==== Observables
+* have a `.subscribe()` method
