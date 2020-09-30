@@ -32,10 +32,22 @@ The word uppercase in the interpolation binding, right after the pipe operator (
 <h2>{{hero.name | uppercase}} Details</h2>
 
 {empty} +
+{empty} +
 
 ==== Directives
+`@Directives` are instructions in the DOM. +
+They specify how components and business logic are placed.
+There are 3 Types.
 
+[cols="1,5"]
+|===
+| Component Directives | Component directives are used in main class. They contain the detail of how the component should be processed, instantiated and used at runtime.
+| Structural Directives | Structural directives start with a * sign. These directives are used to manipulate and change the structure of the DOM elements. For example, *ngIf and *ngFor.
+| Attribute Directives | Attribute directives are used to change the look and behavior of the DOM elements. For example: ngClass, ngStyle etc.
+|===
 
+===== Directive Config
+selector : css-selector
 
 {empty} +
 
