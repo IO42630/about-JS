@@ -1,0 +1,1 @@
+{"version":3,"sources":["../06-modules/main2.js"],"names":["bar","require","console"],"mappings":";;AAAA,IAAIA,GAAG,GAAGC,OAAO,CAAjB,cAAiB,CAAjB;;AAEAC,OAAO,CAAPA,GAAAA,CAAYF,GAAG,CAAfE,GAAAA","sourcesContent":["let bar = require('./module-es6')\n\nconsole.log(bar.foo);\n\n"],"file":"main2.js"}
