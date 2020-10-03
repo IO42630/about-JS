@@ -1,6 +1,6 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule }    from '@angular/forms'; // NgModel is imported from here
 import { HttpClientModule }    from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -8,12 +8,12 @@ import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppRoutingModule }     from './app-routing.module';
 
-import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard/dashboard.component';
-import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
-import { HeroesComponent }      from './heroes/heroes.component';
-import { HeroSearchComponent }  from './hero-search/hero-search.component';
-import { MessagesComponent }    from './messages/messages.component';
+import { AppComponent }         from './components/app.component';
+import { DashboardComponent }   from './components/dashboard.component';
+import { HeroDetailComponent }  from './components/hero-detail.component';
+import { HeroesComponent }      from './components/heroes.component';
+import { HeroSearchComponent }  from './components/hero-search.component';
+import { MessagesComponent }    from './components/messages.component';
 
 @NgModule({
   imports: [

@@ -1,0 +1,15 @@
+
+
+
+=== function
+
+
+[source,js]
+function(param){return 2;} // standard
+(param) => { return 2;}    // as lambda
+
+
+{empty} +
+
+==== optional param
+

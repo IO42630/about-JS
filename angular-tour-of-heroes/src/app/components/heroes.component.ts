@@ -1,31 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import {Hero} from '../domain/hero';
+import {HeroService} from '../hero.service';
 
+// selector : CSS selector - how component is referenced in a css file.
+// matches the name of the HTML element that identifies this component within a parent component's template.
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
+
+// (?) interface OnInit
 export class HeroesComponent implements OnInit {
+
   heroes: Hero[];
+
 
   constructor(private heroService: HeroService) { }
 
+  // lifecycle hook
+  // called shortly after creating the component
   ngOnInit() {
     this.getHeroes();
   }
 
+
   getHeroes(): void {
     this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes);
   }
 
   add(name: string): void {
     name = name.trim();
-    if (!name) { return; }
-    this.heroService.addHero({ name } as Hero)
+    if (!name) {
+      return;
+    }
+    this.heroService.addHero({name} as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
       });

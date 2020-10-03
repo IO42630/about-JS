@@ -1,4 +1,5 @@
 == NPM
+<<<<<<< HEAD
 
 package.json must contain name /version
 
@@ -7,4 +8,7 @@ package.json must contain name /version
   "name": "package-name",
   "version": "1.0.0"
 }
+=======
+Node Package Manager
+>>>>>>> origin/master
 
