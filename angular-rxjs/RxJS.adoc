@@ -1,0 +1,3 @@
+== RxJS
+
+* see:  `src.app.app.component.ts`

@@ -32,4 +32,6 @@ function  scopeTest() {
 
 scopeTest()
 
+bat = x => 2*x;
+
 
