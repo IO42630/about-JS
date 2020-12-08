@@ -1,3 +1,16 @@
 == NPM
 Node Package Manager
 
+package.json must contain name /version
+
+[source,json]
+{
+  "name": "package-name",
+  "version": "1.0.0"
+}
+
+
+==== Frequent Errors
+
+* ERR! typeerror Error: Missing required argument #1
+** npm install -g npm@latest
