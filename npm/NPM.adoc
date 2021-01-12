@@ -1,5 +1,5 @@
 == NPM
-<<<<<<< HEAD
+Node Package Manager
 
 package.json must contain name /version
 
@@ -8,7 +8,9 @@ package.json must contain name /version
   "name": "package-name",
   "version": "1.0.0"
 }
-=======
-Node Package Manager
->>>>>>> origin/master
 
+
+==== Frequent Errors
+
+* ERR! typeerror Error: Missing required argument #1
+** npm install -g npm@latest
