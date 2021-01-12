@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/about-JS.iml" filepath="$PROJECT_DIR$/.idea/about-JS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/angular-rxjs/angular-rxjs.iml" filepath="$PROJECT_DIR$/angular-rxjs/angular-rxjs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js/js.iml" filepath="$PROJECT_DIR$/js/js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxjs/rxjs.iml" filepath="$PROJECT_DIR$/rxjs/rxjs.iml" />
     </modules>
   </component>
 </project>
