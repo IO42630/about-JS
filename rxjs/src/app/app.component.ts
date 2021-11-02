@@ -60,8 +60,10 @@ export class AppComponent implements OnInit {
             observer.next('C');  // C is never emitted
         });
 
-        subscription0 = observable0.subscribe(print); // print function will be called every time the Observable emits a value.
-        subscription0.unsubscribe();
+        subscription0 = observable0.subscribe(print); // print function will be called for each time the Observable emits a value.
+        subscription0 = observable0.subscribe(print); // the values are not exhausted. Rather this will print A B again.
+        subscription0.unsubscribe(); // it is good practice to unsubscribe after parsing the events.
+        subscription0 = observable0.subscribe(print); // however this does not prevent us from subscribing again.
 
         observable0= of('hello');
         subscription0 = observable0.subscribe(x => console.log(x)); // prints word
