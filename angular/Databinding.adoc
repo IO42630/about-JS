@@ -1,0 +1,20 @@
+== Databind
+
+=== Component => DOM
+
+==== Interpolation
+
+[source,js]
+<li>Email: {{ user.email }}</li>
+
+==== Property Binding
+
+[source,js]
+<input type="email" [value]="user.email">
+
+
+=== DOM => Component
+==== Event Binding
+[source,js]
+<!-- (event)="function" -->
+<button (click)="cookPotato()"></button>
