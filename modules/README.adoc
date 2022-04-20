@@ -1,0 +1,20 @@
+= Modules
+
+composites that can be exported /imported. +
+
+==== CommonJS (CJS)
+* used by Node.js
+** sometimes choice for server-side js
+* not developed for web
+** lack async loading
+
+==== AMD
+* more complex than CJS
+* allows async modules loading
+* used by Require.js
+
+==== ES6
+* clean syntax of CJS with async loading of ES6
+* not yet supported by browsers
+** a compiler like Babel is needed to use them
+

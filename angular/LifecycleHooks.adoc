@@ -1,0 +1,25 @@
+== Lifecycle Hooks
+
+[cols="1,3"]
+|===
+| ngOnChanges |
+triggers following the modification of @Input bound class members.
+| ngOnInit |
+fires once upon initialization of a component’s input-bound (@Input) properties
+| ngDoCheck |
+fires with every change detection cycle.
+Angular runs change detection frequently.
+Performing any action will cause it to cycle.
+| ngAfterContentInit |
+fires after the component’s content DOM initializes (loads for the first time)
+| ngAfterContentChecked |
+fires after every cycle of change detection targeting the content DOM
+| ngAfterViewInit |
+fires once after the view DOM finishes initializing
+| ngAfterViewChecked |
+fires after any change detection cycle targeting the component’s view
+| ngOnDestroy |
+fires upon a component’s removal from the view and subsequent DOM.
+This hook provides a chance to clean up any loose ends before a component’s deletion.
+
+|===

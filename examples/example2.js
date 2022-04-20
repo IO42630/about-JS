@@ -14,7 +14,7 @@ var divs = new Array();
       inputs[3] = document.getElementById('uid').value;
       inputs[4] = document.getElementById('password').value;
       inputs[5] = document.getElementById('confirm').value;
-      var errors = new Array();
+      var errors = [];
       errors[0] = "<span style='color:red'>Please enter your first name!</span>";
       errors[1] = "<span style='color:red'>Please enter your last name!</span>";
       errors[2] = "<span style='color:red'>Please enter your email!</span>";
@@ -25,7 +25,7 @@ var divs = new Array();
       {
         var errMessage = errors[i];
         var div = divs[i];
-        if (inputs[i] == "")
+        if (inputs[i] === "")
         	document.getElementById(div).innerHTML = errMessage;
         else if (i==2)
         {

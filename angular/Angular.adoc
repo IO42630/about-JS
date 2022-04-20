@@ -1,0 +1,101 @@
+=== Angular
+
+==== Notes for later
+|===
+| e2e folder | end-to-end test project
+|===
+
+===== Getting Started
+
+[source]
+cd "dir containing angular.json"
+npm install
+npm run start
+
+===== Commands
+[cols="10,30"]
+|===
+| ng |
+| `ng serve` | compile and run
+| `ng generate component <name>` | creates a component in `src/app/<name>`.
+| `ng generate service <name>` |
+|===
+
+==== User Input
+* use ng event bindings to respond to any DOM event.
+* bind a DOM event
+** surround the DOM event name
+** assign a quoted template statement to it
+*** <button (click)="onClickMe()">Click me!</button>
+
+
+
+==== Pipes
+The word uppercase in the interpolation binding, right after the pipe operator ( | ), activates the built-in UppercasePipe.
+
+[source,html]
+<h2>{{hero.name | uppercase}} Details</h2>
+
+{empty} +
+{empty} +
+
+==== Directives
+`@Directives` are instructions in the DOM. +
+They specify how components and business logic are placed.
+There are 3 Types.
+
+[cols="1,5"]
+|===
+| Component Directives | Component directives are used in main class. They contain the detail of how the component should be processed, instantiated and used at runtime.
+| Structural Directives | Structural directives start with a * sign. These directives are used to manipulate and change the structure of the DOM elements. For example, *ngIf and *ngFor.
+| Attribute Directives | Attribute directives are used to change the look and behavior of the DOM elements. For example: ngClass, ngStyle etc.
+|===
+
+===== Directive Config
+selector : css-selector
+
+{empty} +
+
+==== Components
+
+
+{empty} +
+
+==== Modules
+* Group of Components
+* @NgModule with the following parameters:
+** `imports`
+** `declarations`
+** `exports`
+** `providers`
+** `bootstrap`
+** `entryComponents`
+
+{empty} +
+
+==== Modules vs Components
+
+Components control views (html). They also communicate with other components and services to bring functionality to your app.
+
+Modules consist of one or more components. They do not control any html. Your modules declare which components can be used by components belonging to other modules, which classes will be injected by the dependency injector and which component gets bootstrapped. +
+Modules allow you to manage your components to bring modularity to your app.
+
+
+==== @Injectable
+Denotes a service which can be provided to (injected into) components.
+
+
+provideIn: 'root' +
+ angular creates a single shared instance, that can be injected into any class.
+
+{empty} +
+
+==== .spec.tx files
+The spec files are unit tests for your source files. +
+The convention for Angular applications is to have a .spec.ts file for each .ts file.
+
+{empty} +
+{empty} +
+
+==== Observables
+* have a `.subscribe()` method

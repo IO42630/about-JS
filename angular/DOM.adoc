@@ -1,0 +1,5 @@
+== DOM
+
+* `DOM` (Document Object Model)
+* `content DOM` defines the innerHTML of directive elements.
+* `view DOM` is a component’s template excluding any template HTML nested within a directive.

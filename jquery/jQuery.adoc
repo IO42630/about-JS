@@ -1,0 +1,6 @@
+== jQuery
+
+[cols="1,4"]
+|===
+| `$()` | Convention: stores reference to `document.getElementById()`
+|===

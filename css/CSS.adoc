@@ -1,0 +1,67 @@
+== CSS
+@-rules dont participate in the cascade
+
+
+
+==== Sources for CSS Declarations
+* User-agent stylesheet (browser)
+* Author stylesheet (theme of website set by developer)
+* User stylesheet (user overwrites)
+
+{empty} +
+
+==== Cascading order
+
+==== Syntax
+
+[source]
+selector {property1:value1; property2:value2;}
+h1 {color:blue; font-size:12px;}
+
+==== Selectors
+
+[source]
+p {color:red;} // element
+#foo {color:red;} // id
+.center {color:red;} // class
+//
+p.center {color:red;} // elements with class
+<p class="center"></p>
+//
+div > p {color:red;} // child (all p that are children of a div)
+//
+div + p {color:red;} // sibling (first p that are placed immediately after a div)
+
+
+==== Specificity
+The most *specific* rule is appiled.
+
+4 categories
+
+1. Inline styles
+2. IDs
+3. Classes, attributes and pseudo-classes
+4. Elements and pseudo-elements
+
+[cols="10,60,20"]
+|===
+| Prio | Category | Weight
+| 1    | Inline styles | 1000
+| 2    | ID | 100
+| 3    | Classes, attributes and pseudo-classes | 10
+| 4    | Elements and pseudo-elements | 1
+|===
+
+
+==== Other Operators
+===== &
+[source]
+.clearfix {
+  &:before {
+    content: '';
+  }
+}
+// will compile to
+.clearfix:before {
+  content: '';
+}
