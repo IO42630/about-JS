@@ -1,0 +1,27 @@
+= Events
+:toc:
+:toclevels: 4
+
+=== Window
+
+=== Form
+
+=== Keyboard
+
+=== Mouse
+onclick
+ondblclick
+onmousedown
+onmousemove : mouse is moved while over the element
+onmouseout
+onmouseover
+onmouseup
+onmousewheel
+onwheel
+
+=== Clipboard
+* oncopy
+* oncut
+* onpaste
+
+=== Media
