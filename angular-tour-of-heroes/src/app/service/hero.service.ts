@@ -4,19 +4,21 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
 
-import {Hero} from './domain/hero';
+import {Hero} from '../domain/hero';
 import {MessageService} from './message.service';
 
 
 @Injectable({providedIn: 'root'})
 export class HeroService {
 
-  private heroesUrl = 'api/heroes';  // URL to web api
+  private heroesUrl = 'api/heroesDataStore';  // see Service#Magic Mock Web API
 
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
-  constructor(private http: HttpClient,
-              private messageService: MessageService) { }
+  constructor(
+      private http: HttpClient,
+      private messageService: MessageService
+  ) { }
 
   /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
@@ -44,6 +46,7 @@ export class HeroService {
   /** GET hero by id. Will 404 if id not found */
   getHero(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/${id}`;
+    console.log(url);
     return this.http.get<Hero>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))

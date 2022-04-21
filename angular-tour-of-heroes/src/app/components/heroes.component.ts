@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {Hero} from '../domain/hero';
-import {HeroService} from '../hero.service';
+import {HeroService} from '../service/hero.service';
 
 // selector : CSS selector - how component is referenced in a css file.
 // matches the name of the HTML element that identifies this component within a parent component's template.

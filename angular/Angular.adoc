@@ -1,4 +1,6 @@
-=== Angular
+= Angular
+:toc:
+:toclevels: 4
 
 ==== Notes for later
 |===
@@ -80,11 +82,11 @@ Components control views (html). They also communicate with other components and
 Modules consist of one or more components. They do not control any html. Your modules declare which components can be used by components belonging to other modules, which classes will be injected by the dependency injector and which component gets bootstrapped. +
 Modules allow you to manage your components to bring modularity to your app.
 
+{empty} +
 
 ==== @Injectable
-Denotes a service which can be provided to (injected into) components.
-
-
+Denotes a service which can be provided to (injected into) components. +
+{empty} +
 provideIn: 'root' +
  angular creates a single shared instance, that can be injected into any class.
 

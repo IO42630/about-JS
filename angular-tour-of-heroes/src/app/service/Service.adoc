@@ -1,0 +1,8 @@
+= Service
+
+=== Magic Mock Web API
+
+1. `InMemoryDbService.createDb()` defines some data store by returning `{xyz}`.
+1. by including `HttpClientInMemoryWebApiModule` in `app.module`, +
+we mock an endpoint at the canonical URL `api/xyz`.
+1. we can now use `HttpClient.get(api/xyz)`
