@@ -1,0 +1,27 @@
+= Variables
+:toc:
+:toclevels: 4
+
+{empty} +
+
+==== scoping
+`var a1` is scoped to the function body. +
+`let a2` is scoped to the block. +
+`a3` is has always global scope - event if declared within a function.
+
+{empty} +
+
+==== hoisting (hissen)
+`var` is hoisted : initialized with `undefined` before the code is run. +
+`let` is not hoisted : accessing before initialization `-> ReferenceError`.
+
+{empty} +
+
+==== global object property
+At the top level, let, unlike var, does not create a property on the global object:
+
+[source,js]
+var foo = "Foo";  // globally scoped
+let bar = "Bar"; // globally scoped
+console.log(window.foo); // Foo
+console.log(window.bar); // undefined
