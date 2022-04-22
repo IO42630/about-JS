@@ -1,4 +1,8 @@
-== Databind
+= Databinding
+
+image::img/data-binding.png[width=480]
+
+
 
 === Component => DOM
 
@@ -15,6 +19,8 @@
 
 === DOM => Component
 ==== Event Binding
-[source,js]
+[source,html]
 <!-- (event)="function" -->
-<button (click)="cookPotato()"></button>
+<button (click)="cookPotato()"></button> <!-- within vanilla element -->
+<!-- someEvent defined via @Output of SomeComponent -->
+<some-component (someEvent)="onSomeEvent()"></some-component>
