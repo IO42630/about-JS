@@ -1,0 +1,28 @@
+= HTML
+
+
+
+==== (HTML) Document
+* File ending with .html
+
+==== DOM
+* Document Object Model
+* Provides Canon for Document
+* Identifies Elements
+
+
+==== Element
+* ~ Component
+
+==== Leaf Element
+* Element without further child Elements.
+
+==== Shadow DOM
+* Invisible sub-tree
+** XML-like API
+** can add behaviour
+** can add styles (which are isolated to the subtree)
+* Built-in with Browser
+
+==== Directive
+* User (Developer/Framework) built Shadow DOM

@@ -42,23 +42,25 @@ The word uppercase in the interpolation binding, right after the pipe operator (
 {empty} +
 
 ==== Directives
-`@Directives` are instructions in the DOM. +
-They specify how components and business logic are placed.
-There are 3 Types.
+* For definition of directive, see Html.adoc
+* Angular adds 3 main types of directives.
 
-[cols="1,5"]
-|===
-| Component Directives | Component directives are used in main class. They contain the detail of how the component should be processed, instantiated and used at runtime.
-| Structural Directives | Structural directives start with a * sign. These directives are used to manipulate and change the structure of the DOM elements. For example, *ngIf and *ngFor.
-| Attribute Directives | Attribute directives are used to change the look and behavior of the DOM elements. For example: ngClass, ngStyle etc.
-|===
+===== Component Directives
+* ~ Component (TS class && HTML template)
+* embedded in parent html via directive `<app-messages></app-messages>`
+** which corresponds to `selector: 'app-messages'` in TS class
 
-===== Directive Config
-selector : css-selector
+===== Structural Directives
+* start with `*`
+* manipulate structure of the document
+* e.g. `*ngIf` , `*ngFor`
 
-{empty} +
+===== Attribute Directives
+* manipulate attributes of elements of the document
+* e.g. `*ngClass` , `*ngStyle`
 
-==== Components
+
+
 
 
 {empty} +
@@ -92,7 +94,7 @@ provideIn: 'root' +
 
 {empty} +
 
-==== .spec.tx files
+==== .spec.ts files
 The spec files are unit tests for your source files. +
 The convention for Angular applications is to have a .spec.ts file for each .ts file.
 
