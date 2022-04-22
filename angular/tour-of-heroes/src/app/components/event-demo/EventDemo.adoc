@@ -1,0 +1,6 @@
+= EventDemo
+
+* `someProperty` stored in parent (`eventDemo`)
+** passed via `child` down to `grandchild`
+* `someEvent` emitted in `grandchild`
+** passed via `child` up to parent
