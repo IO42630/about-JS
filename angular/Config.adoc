@@ -1,0 +1,5 @@
+= Config
+
+|===
+| `angular.json` | configures the cli project
+|===

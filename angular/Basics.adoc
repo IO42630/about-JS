@@ -1,0 +1,8 @@
+= Basics
+:toc:
+:toclevels: 4
+
+==== Startup
+[source]
+index.html -> AppComponent
+main.ts -> AppModule -> AppComponent

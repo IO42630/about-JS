@@ -1,0 +1,3 @@
+= Style
+
+* can add global style to `~/src/styles.css`
