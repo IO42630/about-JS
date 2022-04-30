@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express()
 const HOST = 'localhost';
@@ -11,6 +12,8 @@ const db = [
     { key : 'key4', value : 'value4' },
     { key : 'key5', value : 'value5' }
 ]
+
+app.use(cors({ origin: true, credentials: true })); // allow cross origin requests.
 
 app.get('/', (req, res) => {
     res.send('Hello.');
