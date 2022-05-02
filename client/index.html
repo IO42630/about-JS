@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>GET DEMO</title>
+<body>
+
+<h2>GET DEMO</h2>
+
+<!-- AJAX -->
+<p id="ajax_content"></p>
+<button type="button" id="ajax_button" onclick="loadDocument()">AJAX</button>
+<script type="text/javascript" src="./ajax_script.js"></script>
+
+<!-- JQUERY -->
+<p id="jquery_content"></p>
+<button type="button" id="jquery_button" onclick="loadByJQuery()">JQUERY</button>
+<script type="text/javascript" src="../jquery/jquery-3.5.1.js"></script>
+<script>
+    function loadByJQuery() {
+        $.get("http://localhost:3000/one", function (data, status) {
+            if (status === 'success') {
+                document.getElementById("jquery_content").innerHTML = JSON.stringify(data);
+            }
+        });
+    }
+</script>
+
+<!-- HTTP -->
+<!-- browserify .\client\http-script.js --s httpbfy  > .\client\http-script-bfy.js -->
+<p id="http_content"></p>
+<button type="button" id="http_button" onclick="httpbfy.loadByHttp()">HTTP</button>
+<script type="text/javascript" src="./http-script-bfy.js"></script>
+
+<!-- AXIOS -->
+<p id="axios_content"></p>
+<button type="button" id="axios_button" onclick="loadByAxios()">AXIOS</button>
+<script type="text/javascript" src="../node_modules/axios/dist/axios.min.js"></script>
+<script>
+    function loadByAxios() {
+        let content = document.getElementById("axios_content").innerHTML;
+        axios.get('http://localhost:3000/one')
+            .then(res => {
+                if (res.status === 200) {
+                    content = JSON.stringify(res.data);
+                }
+            })
+            .catch(error => {content = error;});
+    }
+</script>
+
+</body>
+</html>
