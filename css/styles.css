@@ -1,0 +1,8 @@
+p {color: green;}
+#some-id { color: #0a53be }
+.some-class {color: aquamarine }
+[about] {color: blueviolet }
+
+
+b.some-class {color: aquamarine }
+b[about] {color: blueviolet }

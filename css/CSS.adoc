@@ -1,7 +1,8 @@
-== CSS
-@-rules dont participate in the cascade
+= CSS
+:toc:
+:toclevels: 4
 
-
+{empty} +
 
 ==== Sources for CSS Declarations
 * User-agent stylesheet (browser)
@@ -10,38 +11,28 @@
 
 {empty} +
 
-==== Cascading order
-
 ==== Syntax
 
-[source]
-selector {property1:value1; property2:value2;}
-h1 {color:blue; font-size:12px;}
+[source,css]
+selector { property1:value1; property2:value2; }
+h1 { color:blue; font-size:12px; }
+
+{empty} +
 
 ==== Selectors
 
-[source]
-p {color:red;} // element
-#foo {color:red;} // id
-.center {color:red;} // class
-//
-p.center {color:red;} // elements with class
-<p class="center"></p>
-//
-div > p {color:red;} // child (all p that are children of a div)
-//
-div + p {color:red;} // sibling (first p that are placed immediately after a div)
+[source,css]
+p { color:red; }         /* element */
+#foo { color:red; }      /* id      */
+.center { color:red; }   /* class   */
+p.center { color:red; }  /* elements with class : <p class="center"></p> */
+div > p { color:red; }   /*  child (all p that are children of a div) */
+div + p { color:red; }   /*  sibling (first p that are placed immediately after a div) */
 
+{empty} +
 
-==== Specificity
+==== Weight / Specificity
 The most *specific* rule is appiled.
-
-4 categories
-
-1. Inline styles
-2. IDs
-3. Classes, attributes and pseudo-classes
-4. Elements and pseudo-elements
 
 [cols="10,60,20"]
 |===
@@ -50,12 +41,17 @@ The most *specific* rule is appiled.
 | 2    | ID | 100
 | 3    | Classes, attributes and pseudo-classes | 10
 | 4    | Elements and pseudo-elements | 1
+| x    | With same prio, the last definition always overrides |
 |===
 
+{empty} +
 
 ==== Other Operators
+
 ===== &
-[source]
+
+[source,css]
+/* */
 .clearfix {
   &:before {
     content: '';
@@ -65,3 +61,7 @@ The most *specific* rule is appiled.
 .clearfix:before {
   content: '';
 }
+
+===== @
+
+@-rules dont participate in the cascade
