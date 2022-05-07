@@ -14,9 +14,12 @@ import { HeroDetailComponent }  from './components/hero-detail.component';
 import { HeroesComponent }      from './components/heroes.component';
 import { HeroSearchComponent }  from './components/hero-search.component';
 import { MessagesComponent }    from './components/messages.component';
-import { EventDemoComponent } from './components/event-demo/event-demo.component';
+import { ParentComponent } from './components/event-demo/parent.component';
 import { ChildComponent } from './components/event-demo/child.component';
 import { GrandchildComponent } from './components/event-demo/grandchild.component';
+import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
+import { SelectorClassComponent } from './selector-demo/selector-class.component';
+import { SelectorElementComponent } from './selector-demo/selector-element.component';
 
 @NgModule({
   imports: [
@@ -32,17 +35,20 @@ import { GrandchildComponent } from './components/event-demo/grandchild.componen
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
-    HeroSearchComponent,
-    EventDemoComponent,
-    ChildComponent,
-    GrandchildComponent
-  ],
+    declarations: [
+        AppComponent,
+        DashboardComponent,
+        HeroesComponent,
+        HeroDetailComponent,
+        MessagesComponent,
+        HeroSearchComponent,
+        ParentComponent,
+        ChildComponent,
+        GrandchildComponent,
+        SelectorDemoComponent,
+        SelectorClassComponent,
+        SelectorElementComponent
+    ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

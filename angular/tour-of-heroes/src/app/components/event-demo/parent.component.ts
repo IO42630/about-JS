@@ -10,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
         </app-child>
     `
 })
-export class EventDemoComponent implements OnInit {
+export class ParentComponent implements OnInit {
 
-    someProperty: number = 0;
+    someProperty = 0;
 
     ngOnInit(): void { }
 

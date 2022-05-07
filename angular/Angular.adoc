@@ -17,7 +17,7 @@ npm run start
 ===== Commands
 [cols="10,30"]
 |===
-| ng |
+| `npm run ng` | call to `ng`
 | `ng serve` | compile and run
 | `ng generate component <name>` | creates a component in `src/app/<name>`.
 | `ng generate service <name>` |
