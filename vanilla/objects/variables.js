@@ -51,4 +51,12 @@ let b2 = 2;
 { let b2 = 2 }  // `let` may not be redeclared.
 const b3 = 3; // like `let`, except no reassignment.
 
+// variable names can't start with a number, contain spaces, but can
+// contain letters, numbers, underscores or $ (Are case sensitive)
+var myName = "Derek";
+var myAge = 40;
+
+// Variables don't have a defined type, which can cause problems
+myName = 100;
+
 

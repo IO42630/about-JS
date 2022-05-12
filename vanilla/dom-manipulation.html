@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+
+<div id="sampDiv2"><p>Lorem ipsum dolor sit amet,
+    <em>consectetur adipiscing</em> elit. Proin eget turpis eget quam luctus malesuada ut ac nulla. Suspendisse fermentum magna neque, a auctor felis pretium eget. Fusce ornare feugiat magna, ut faucibus sapien congue ut. Nunc nec fringilla ex, nec varius nisl. Ut eget laoreet nisi. Aenean quis venenatis mauris, at volutpat ante. Donec sollicitudin lacinia ornare. In quis accumsan ligula, id egestas enim.
+</p><p>Lorem ipsum dolor sit amet,
+    <b>consectetur adipiscing</b> elit. Proin eget turpis eget quam luctus malesuada ut ac nulla. Suspendisse fermentum magna neque, a auctor felis pretium eget.
+    <em>Fusce ornare</em> feugiat magna, ut faucibus sapien congue ut. <b>Nunc nec fringilla</b> ex, nec varius nisl.</p></div>
+
+<img src="ntt-logo.png" id="logo2" alt="NTT Logo" height="180" width="180"><br/>
+
+<button id="goToGoogle">Go to Google</button>
+<br/>
+
+<button id="forwardPage">Forward Page</button>
+<br/>
+
+<button id="backPage">Back Page</button>
+<br/>
+
+<button id="reload">Reload Page</button>
+<br/>
+
+<script>
+    document.write('Hello.'); // writes text to html
+
+
+    // Get current web page info
+    document.write("Current URL : ", window.location.href, "<br />");
+    document.write("Current Host : ", window.location.hostname, "<br />");
+    document.write("Current Path : ", window.location.pathname, "<br />");
+
+    // Change site on button click
+    document.getElementById('goToGoogle').onclick = function (event) {
+        window.location.href = "http://google.com";
+        // OR
+        // window.location.assign("http://google.com");
+    }
+
+    // Go forward a page on click
+    document.getElementById('forwardPage').onclick = function (event) {
+        history.forward();
+    }
+
+    // Go back a page on click
+    document.getElementById('forwardPage').onclick = function (event) {
+        history.back();
+    }
+
+    // Use history.go(-2) or history.go(2) to jump multiple pages
+
+    // Reload page on button click
+    document.getElementById('reload').onclick = function (event) {
+        window.location.reload(true);
+    }
+
+    // You can get all ps and then target them like an array
+    var pElements = document.getElementsByTagName('p');
+    pElements[3].style.backgroundColor = "#EFDECD";
+
+    // Target the html
+    document.childNodes[1].style.backgroundColor = "#FAEBD7";
+
+    // Change the color of the 1st child in sampDiv2
+    var sampDiv2 = document.getElementById('sampDiv2');
+    sampDiv2.childNodes[0].style.backgroundColor = "#F0FFFF";
+
+    // Style the 1st child of sampDivs 1st child
+    sampDiv2.childNodes[0].childNodes[1].style.backgroundColor = "#BFAFB2";
+
+    // JavaScript can get confused by text nodes when targeting elements
+    // Text nodes are whitespace, which nodeType will identify with a 3
+    // while elements as a 1
+    // You can eliminate text nodes by deleting whitespace or by using a
+    // minimizer (lastChild and firstChild may not work)
+    document.write("Node Type : ", sampDiv2.childNodes[0].childNodes[0].nodeType, "<br />");
+
+    document.write("Node Name : ", sampDiv2.childNodes[0].childNodes[0].nodeName, "<br />");
+
+    sampDiv2.childNodes[1].childNodes[3].style.backgroundColor = "#BFAFB2";
+
+    // Changing element attributes
+    var nttLogo2 = document.getElementById('logo2');
+
+    // Check for attributes
+    document.write("Logo has alt : ", nttLogo2.hasAttribute("alt"), "<br />");
+
+    // Change attribute
+    nttLogo2.setAttribute("alt", "NTT Logo 2");
+
+    // Get attribute
+    document.write("Logo alt Value : ", nttLogo2.getAttribute("alt"), "<br />");
+
+    // Get all attributes and print them
+    var attribList = document.getElementById('logo2').attributes;
+
+    for (i = 0; i < attribList.length; i++) {
+        document.write("Attribute ", i, " : ", attribList[i].nodeName, " : ", attribList[i].nodeValue, "<br />");
+    }
+
+    // Add a p element after setting an attribute and text
+    var paragraph3 = document.createElement("p");
+
+    paragraph3.setAttribute("id", "paragraph3");
+
+    paragraph3.innerHTML = "Proin eget turpis eget quam luctus malesuada ut ac nulla.";
+
+    sampDiv2.appendChild(paragraph3);
+
+    // Insert the element before the 1st child
+    sampDiv2.insertBefore(paragraph3, sampDiv2.childNodes[0]);
+</script>
