@@ -4,13 +4,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     selector: 'app-child',
     template: `
         <app-grandchild
-                [someProperty]="someProperty"
-                (someEvent)="someEvent.emit($event)"
+            [someAliasForSomeProperty]="someProperty"
+            (someEvent)="someEvent.emit($event)"
         >
         </app-grandchild>
     `
 })
-export class ChildComponent implements OnInit {
+export class ChildComponent {
 
     @Input()
     someProperty: number;
@@ -18,6 +18,5 @@ export class ChildComponent implements OnInit {
     @Output()
     someEvent = new EventEmitter();
 
-    ngOnInit(): void { }
 
 }

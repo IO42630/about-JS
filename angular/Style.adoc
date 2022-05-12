@@ -1,3 +1,5 @@
 = Style
 
 * can add global style to `~/src/styles.css`
+* npm install -save bootstrap@3
+    * add path to bootstrap.min.js in angular.json

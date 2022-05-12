@@ -1,0 +1,20 @@
+<p *ngIf="true; else no">true</p>
+
+<ng-template #no>
+    <p>false</p>
+</ng-template>
+
+<p
+    [ngStyle]="{backgroundColor: rngColor()}"
+    [ngClass]="{'some-class': coinResult}"
+>
+    RED
+</p>
+
+<button (click)="coinResult=coin()">rng</button>
+
+<button (click)="someStrings.push(word())">add</button>
+
+<div *ngFor="let entry of someStrings"> {{entry}} </div>
+
+<div *ngFor="let entry of someStrings; let i = index"> {{i + ' ' + entry}} </div>

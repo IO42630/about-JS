@@ -1,40 +1,40 @@
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms'; // NgModel is imported from here
-import { HttpClientModule }    from '@angular/common/http';
-
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; // NgModel is imported from here
+import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './service/in-memory-data.service';
-
-import { AppRoutingModule }     from './app-routing.module';
-
-import { AppComponent }         from './components/app.component';
-import { DashboardComponent }   from './components/dashboard.component';
-import { HeroDetailComponent }  from './components/hero-detail.component';
-import { HeroesComponent }      from './components/heroes.component';
-import { HeroSearchComponent }  from './components/hero-search.component';
-import { MessagesComponent }    from './components/messages.component';
-import { ParentComponent } from './components/event-demo/parent.component';
-import { ChildComponent } from './components/event-demo/child.component';
-import { GrandchildComponent } from './components/event-demo/grandchild.component';
+import { InMemoryDataService } from './service/in-memory-data.service';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './components/app.component';
+import { DashboardComponent } from './components/dashboard.component';
+import { HeroDetailComponent } from './components/hero-detail.component';
+import { HeroesComponent } from './components/heroes.component';
+import { HeroSearchComponent } from './components/hero-search.component';
+import { MessagesComponent } from './components/messages.component';
+import { ParentComponent } from './event-demo/parent.component';
+import { ChildComponent } from './event-demo/child.component';
+import { GrandchildComponent } from './event-demo/grandchild.component';
 import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
 import { SelectorClassComponent } from './selector-demo/selector-class.component';
 import { SelectorElementComponent } from './selector-demo/selector-element.component';
+import { DatabindingDemoComponent } from './databinding-demo/databinding-demo.component';
+import { CoreComponent } from './core/core.component';
+import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        HttpClientModule,
 
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
-  ],
+        // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+        // and returns simulated server responses.
+        // Remove it when a real server is ready to receive requests.
+        HttpClientInMemoryWebApiModule.forRoot(
+            InMemoryDataService, {dataEncapsulation: false}
+        )
+    ],
     declarations: [
         AppComponent,
         DashboardComponent,
@@ -47,8 +47,11 @@ import { SelectorElementComponent } from './selector-demo/selector-element.compo
         GrandchildComponent,
         SelectorDemoComponent,
         SelectorClassComponent,
-        SelectorElementComponent
+        SelectorElementComponent,
+        DatabindingDemoComponent,
+        CoreComponent,
+        DirectivesDemoComponent
     ],
-  bootstrap: [ AppComponent ]
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

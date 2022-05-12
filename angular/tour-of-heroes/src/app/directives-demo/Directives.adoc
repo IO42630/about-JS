@@ -1,0 +1,21 @@
+
+==== Directives
+* For definition of directive, see Html.adoc
+* Angular adds 3 main types of directives.
+
+===== Component Directives
+* ~ Component (TS class && HTML template)
+* embedded in parent html via directive `<app-messages></app-messages>`
+** which corresponds to `selector: 'app-messages'` in TS class
+
+===== Structural Directives
+* are called with `*` prefix
+* manipulate structure of the document
+* e.g. `*ngIf` , `*ngFor`
+* `*ngIf` does not 'hidden=true', removes from DOM altogether.
+
+===== Attribute Directives
+* are usually called with `[<directive>]`
+* manipulate attributes of elements of the document
+* e.g. `ngClass` , `ngStyle`
+

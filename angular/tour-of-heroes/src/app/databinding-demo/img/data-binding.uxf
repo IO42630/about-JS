@@ -12,7 +12,7 @@
     <panel_attributes>lt=&lt;&lt;&lt;-
 lw=2
 fg=blue
-{{value/property}</panel_attributes>
+{{value/property}}</panel_attributes>
     <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
   </element>
   <element>
@@ -99,7 +99,7 @@ fg=blue
       <w>513</w>
       <h>76</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;-&gt;&gt;&gt;
 lw=2
 fg=blue
 [(ngModel)] = 'property'</panel_attributes>

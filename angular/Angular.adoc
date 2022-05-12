@@ -41,25 +41,6 @@ The word uppercase in the interpolation binding, right after the pipe operator (
 {empty} +
 {empty} +
 
-==== Directives
-* For definition of directive, see Html.adoc
-* Angular adds 3 main types of directives.
-
-===== Component Directives
-* ~ Component (TS class && HTML template)
-* embedded in parent html via directive `<app-messages></app-messages>`
-** which corresponds to `selector: 'app-messages'` in TS class
-
-===== Structural Directives
-* start with `*`
-* manipulate structure of the document
-* e.g. `*ngIf` , `*ngFor`
-
-===== Attribute Directives
-* manipulate attributes of elements of the document
-* e.g. `*ngClass` , `*ngStyle`
-
-
 
 
 
@@ -79,9 +60,9 @@ The word uppercase in the interpolation binding, right after the pipe operator (
 
 ==== Modules vs Components
 
-Components control views (html). They also communicate with other components and services to bring functionality to your app.
+Components control views (html).They also communicate with other components and services to bring functionality to your app.
 
-Modules consist of one or more components. They do not control any html. Your modules declare which components can be used by components belonging to other modules, which classes will be injected by the dependency injector and which component gets bootstrapped. +
+Modules consist of one or more components.They do not control any html.Your modules declare which components can be used by components belonging to other modules, which classes will be injected by the dependency injector and which component gets bootstrapped. +
 Modules allow you to manage your components to bring modularity to your app.
 
 {empty} +
@@ -90,11 +71,12 @@ Modules allow you to manage your components to bring modularity to your app.
 Denotes a service which can be provided to (injected into) components. +
 {empty} +
 provideIn: 'root' +
- angular creates a single shared instance, that can be injected into any class.
+angular creates a single shared instance, that can be injected into any class.
 
 {empty} +
 
 ==== .spec.ts files
+
 The spec files are unit tests for your source files. +
 The convention for Angular applications is to have a .spec.ts file for each .ts file.
 
@@ -102,4 +84,9 @@ The convention for Angular applications is to have a .spec.ts file for each .ts 
 {empty} +
 
 ==== Observables
+
 * have a `.subscribe()` method
+
+==== Debugging
+
+* Browser > Sources > webpack > contains ts files (mapped via source map)

@@ -11,11 +11,14 @@
 * Identifies Elements
 
 
-==== Element
-* ~ Component
+==== Glossary
 
-==== Leaf Element
-* Element without further child Elements.
+|===
+| Tag | (opening, closing) | `<p>` , `</p>`
+| Element | (tags + content) | `<p>content</p>`
+|  Leaf Element | Element without further child Elements. |
+|===
+
 
 ==== Shadow DOM
 * Invisible sub-tree

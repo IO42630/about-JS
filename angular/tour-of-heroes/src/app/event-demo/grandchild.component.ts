@@ -7,14 +7,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         <button (click)="someEvent.emit($event)">SomeButton</button>
     `
 })
-export class GrandchildComponent implements OnInit {
+export class GrandchildComponent {
 
-    @Input()
+    foo: { id: number, name: string };
+
+    @Input('someAliasForSomeProperty')
     someProperty: number;
 
     @Output()
     someEvent = new EventEmitter();
 
-    ngOnInit(): void { }
 
 }
