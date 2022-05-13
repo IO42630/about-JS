@@ -2,4 +2,13 @@
 
 * can add global style to `~/src/styles.css`
 * npm install -save bootstrap@3
-    * add path to bootstrap.min.js in angular.json
+* add path to bootstrap.min.js in angular.json
+
+=== View Encapsulation
+
+* local styles (...conponent.scss) apply only to the component (encapsulation).
+* can be overriden with: +
+`@Component({ encapsulation: VievEncapsulation.Emulated })`
+** `Emulated` : default
+** `None` : style is global
+** `Native` : uses the ShadowDOM for encapsulation, will not work on old browsers

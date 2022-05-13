@@ -20,6 +20,7 @@ import { SelectorElementComponent } from './selector-demo/selector-element.compo
 import { DatabindingDemoComponent } from './databinding-demo/databinding-demo.component';
 import { CoreComponent } from './core/core.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
+import { TemplateDemoComponent } from './template-demo/template-demo.component';
 
 @NgModule({
     imports: [
@@ -50,7 +51,8 @@ import { DirectivesDemoComponent } from './directives-demo/directives-demo.compo
         SelectorElementComponent,
         DatabindingDemoComponent,
         CoreComponent,
-        DirectivesDemoComponent
+        DirectivesDemoComponent,
+        TemplateDemoComponent
     ],
     bootstrap: [AppComponent]
 })
