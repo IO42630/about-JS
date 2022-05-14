@@ -20,7 +20,9 @@ import { SelectorElementComponent } from './selector-demo/selector-element.compo
 import { DatabindingDemoComponent } from './databinding-demo/databinding-demo.component';
 import { CoreComponent } from './core/core.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
-import { TemplateDemoComponent } from './template-demo/template-demo.component';
+import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component';
+import { EmptyComponent } from './core/empty.component';
+import { TlChildComponent } from './template-lifecycle-demo/tl-child.component';
 
 @NgModule({
     imports: [
@@ -52,7 +54,9 @@ import { TemplateDemoComponent } from './template-demo/template-demo.component';
         DatabindingDemoComponent,
         CoreComponent,
         DirectivesDemoComponent,
-        TemplateDemoComponent
+        TlParentComponent,
+        EmptyComponent,
+        TlChildComponent
     ],
     bootstrap: [AppComponent]
 })
