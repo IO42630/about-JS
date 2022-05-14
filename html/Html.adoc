@@ -19,8 +19,8 @@
 |  Leaf Element | Element without further child Elements. |
 |===
 
-
 ==== Shadow DOM
+
 * Invisible sub-tree
 ** XML-like API
 ** can add behaviour
@@ -28,4 +28,9 @@
 * Built-in with Browser
 
 ==== Directive
+
 * User (Developer/Framework) built Shadow DOM
+
+==== Tools
+
+* emmet : text expander
