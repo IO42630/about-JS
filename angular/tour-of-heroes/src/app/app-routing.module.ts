@@ -9,6 +9,7 @@ import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
 import { DatabindingDemoComponent } from './databinding-demo/databinding-demo.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component';
+import { SParentComponent } from './services-demo/s-parent.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -20,6 +21,7 @@ const routes: Routes = [
     {path: 'databinding-demo', component: DatabindingDemoComponent},
     {path: 'directives-demo', component: DirectivesDemoComponent},
     {path: 'template-lifecycle-demo', component: TlParentComponent},
+    {path: 'services-demo', component: SParentComponent},
 ];
 
 @NgModule({

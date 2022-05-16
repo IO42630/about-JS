@@ -1,0 +1,15 @@
+= Services
+
+=== Injection Hierarchy
+
+* used terms
+** `[providers]=` determines where service is 'provided'.
+** 'injection' is determined via `constructor` params
+* services injected into an outer component are inherited to the nested component.
+* if provide an inherited service again, it is overridden
+** thus, a new instance is created and referenced.
+** see demo, where we have one `DataService` instance, and two `LoggingService` instances.
+* this leads also to the following behaviour of services provided in:
+** `AppModule` : available application-wide
+** `AppComponent` : available to all components, but not services
+** `Component` : available to component and children (if any).

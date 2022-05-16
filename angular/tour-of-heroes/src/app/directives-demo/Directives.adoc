@@ -13,6 +13,7 @@
 * manipulate structure of the document
 * e.g. `*ngIf` , `*ngFor`
 * `*ngIf` does not 'hidden=true', removes from DOM altogether.
+* only 1 structural directive can used on an element at the same time
 
 ===== Attribute Directives
 * are usually called with `[<directive>]`

@@ -23,6 +23,11 @@ import { DirectivesDemoComponent } from './directives-demo/directives-demo.compo
 import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component';
 import { EmptyComponent } from './core/empty.component';
 import { TlChildComponent } from './template-lifecycle-demo/tl-child.component';
+import { MyHighlightDirective } from './directives-demo/my-highlight.directive';
+import { MyBetterHighDirective } from './directives-demo/my-better-high.directive';
+import { UnlessDirective } from './directives-demo/unless.directive';
+import { SParentComponent } from './services-demo/s-parent.component';
+import { SChildComponent } from './services-demo/s-child.component';
 
 @NgModule({
     imports: [
@@ -56,8 +61,14 @@ import { TlChildComponent } from './template-lifecycle-demo/tl-child.component';
         DirectivesDemoComponent,
         TlParentComponent,
         EmptyComponent,
-        TlChildComponent
+        TlChildComponent,
+        MyHighlightDirective,
+        MyBetterHighDirective,
+        UnlessDirective,
+        SParentComponent,
+        SChildComponent
     ],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

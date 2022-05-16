@@ -1,5 +1,9 @@
 <p *ngIf="true; else no">true</p>
 
+<ng-template [ngIf]="true">
+    <p>true</p>
+</ng-template> <!-- equivalent syntax -->
+
 <ng-template #no>
     <p>false</p>
 </ng-template>
@@ -18,3 +22,15 @@
 <div *ngFor="let entry of someStrings"> {{entry}} </div>
 
 <div *ngFor="let entry of someStrings; let i = index"> {{i + ' ' + entry}} </div>
+
+<p [appMyHighlight]="'pink'">Style Me</p>
+<p appMyBetterHigh [defaultColor]="'transparent'">Style Me</p>
+<p appMyBetterHigh defaultColor="transparent">Style Me</p> <!-- equivalent syntax -->
+
+<div *appUnless="true"></div>
+
+<div [ngSwitch]="value">
+    <p *ngSwitchCase="1">2</p>
+    <p *ngSwitchCase="10">20</p>
+    <p *ngSwitchDefault>0</p>
+</div>

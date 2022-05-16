@@ -10,7 +10,9 @@ export class DirectivesDemoComponent extends CoreComponent {
 
     coinResult = this.coin();
 
-    someStrings: string[] = []
+    someStrings: string[] = [];
+
+    value = 10;
 
 
     rngColor(): string {
