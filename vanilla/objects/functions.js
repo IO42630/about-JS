@@ -130,3 +130,15 @@ document.write("Factorial of 4 : ", factorial(4), "<br />");
 // 1st: num = 4 * factorial(3) = 4 * 6 = 24
 // 2nd: num = 3 * factorial(2) = 3 * 2 = 6
 // 3rd: num = 2 * factorial(1) = 2 * 1 = 2
+
+
+// destructuring
+const obj2 = {id: 1, name: 'foo'}
+
+function doBar(obj) {
+    const {id, name} = obj;
+    console.log(`This is ${id} ${name}.`)
+
+}
+
+doBar(obj2);

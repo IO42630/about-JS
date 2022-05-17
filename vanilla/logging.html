@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const a = {name: 'a'};
+    const b = {name: 'b'};
+    const c = {name: 'c'};
+
+    console.log(a, b, c);
+    console.log({a, b, c}); // computed property names
+    console.table([a, b, c]); // table
+    console.time('looper');
+    let i = 0;
+    while (i < 1000000) { i++; }
+    console.timeEnd('looper')
+
+    console.trace('hello');
+
+</script>
+
+</body>
+</html>
