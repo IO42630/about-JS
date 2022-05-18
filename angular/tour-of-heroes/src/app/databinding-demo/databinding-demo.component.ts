@@ -10,21 +10,23 @@ import { CoreComponent } from '../core/core.component';
 
         <!-- PROPERTY BINDING -->
         <button
-                class="btn btn-primary"
-                [disabled]="isDisabled"
+            class="btn btn-primary"
+            [disabled]="isDisabled"
         >Text
         </button>
+        <app-display value="if property is a simple string we can omit the []"></app-display>
+        <app-display [value]="'for objects we must use []'"></app-display>
 
         <!-- EVENT BINDING -->
         <input
-                type="text"
-                class="form-control"
-                onMouseover="console.log('onMouseOver (vanilla event binding)')"
-                (input)="displayText($event)"
+            type="text"
+            class="form-control"
+            onMouseover="console.log('onMouseOver (vanilla event binding)')"
+            (input)="displayText($event)"
         >
         <p>{{someText}}</p>
         <!-- TWO-WAY DATA BINDING -->
-        <p [(ngModel)]="someText"></p>
+        <p [(ngModel)]="someText" ngDefaultControl></p>
     `
 })
 export class DatabindingDemoComponent extends CoreComponent {

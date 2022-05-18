@@ -10,6 +10,8 @@ import { DatabindingDemoComponent } from './databinding-demo/databinding-demo.co
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component';
 import { SParentComponent } from './services-demo/s-parent.component';
+import { RouterDemoComponent } from './router-demo/router-demo.component';
+import { RouteBackComponent } from './router-demo/route-back.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -22,6 +24,21 @@ const routes: Routes = [
     {path: 'directives-demo', component: DirectivesDemoComponent},
     {path: 'template-lifecycle-demo', component: TlParentComponent},
     {path: 'services-demo', component: SParentComponent},
+    {
+        path: 'router-demo', component: RouterDemoComponent, children: [
+            /* */
+            {path: ':id1/:id2', component: RouteBackComponent}, /* KEY-R1 */
+            {path: ':id1/:id2', component: RouteBackComponent},
+        ]
+    },
+    /* '/' allowed as separator between params :id */
+    {path: 'route-back-demo/:id1/:id2', component: RouteBackComponent}, /* KEY-R2 */
+    {path: '**', redirectTo: ''}, /* redirect all routes to '' */
+    /* since Routes is checked entry be entry,
+    * this results in "redirect all not defined routes to ''". */
+    {path: '', redirectTo: '/somewhere-else', pathMatch: 'full'}
+    /* '' matches all, since every path starts with ''.
+    To disable "prefix matching" indicate 'full'. */
 ];
 
 @NgModule({
