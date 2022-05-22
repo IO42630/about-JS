@@ -16,7 +16,8 @@ export class RxjsDemoComponent implements OnInit, OnDestroy {
   someSub: Subscription;
 
   ngOnInit(): void {
-    this.someSub = new Observable().subscribe();
+    const foo = new Subscription();
+    foo.this.someSub = new Observable().subscribe();
   }
 
   ngOnDestroy() {
