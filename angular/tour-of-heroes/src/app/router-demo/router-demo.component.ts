@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../auth-demo/auth.service';
 
 @Component({
     selector: 'app-router-demo',
@@ -44,7 +45,8 @@ export class RouterDemoComponent {
 
     constructor(
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private auth: AuthService,
     ) {}
 
     onClick() {

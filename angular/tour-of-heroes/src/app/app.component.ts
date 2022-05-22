@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { AuthService } from './auth-demo/auth.service';
 
 @Component({
     selector: 'app-root',
     template: `
+
+        <app-auth-modal #modalx
+        [hidden]="auth.isAuthenticated()"></app-auth-modal>
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-2">
@@ -12,6 +16,10 @@ import { Component } from '@angular/core';
                             <!-- routerLinkActive applies class if current route contains routerLink -->
                             <a class="nav-link fs-3" routerLink="{{entry.link}}" routerLinkActive="text-success">{{entry.text}}</a>
                         </li>
+                            <button *ngIf="auth.isAuthenticated()"
+                                (click)="auth.logout()">Logout</button>
+                        <button *ngIf="!auth.isAuthenticated()"
+                            (click)="modalx.open()">Login</button>
                     </ul>
                 </div>
                 <div class="col-10">
@@ -22,6 +30,13 @@ import { Component } from '@angular/core';
     `
 })
 export class AppComponent {
+
+    @ViewChild('modalx')
+    modalx
+
+    constructor(
+        private auth: AuthService
+    ) {}
 
     entries: { text: string, link: any }[] = [
         {text: 'Dashboard', link: '/dashboard'},

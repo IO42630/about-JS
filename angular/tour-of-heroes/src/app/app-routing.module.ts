@@ -12,7 +12,7 @@ import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component
 import { SParentComponent } from './services-demo/s-parent.component';
 import { RouterDemoComponent } from './router-demo/router-demo.component';
 import { RouteBackComponent } from './router-demo/route-back.component';
-import { AuthGuardService } from './auth-guard.service';
+import { AuthGuardService } from './auth-demo/auth-guard.service';
 
 const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},

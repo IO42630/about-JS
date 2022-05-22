@@ -35,6 +35,8 @@ import { DisplayComponent } from './databinding-demo/display.component';
 import { RouteBackComponent } from './router-demo/route-back.component';
 import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 import { RouterModule } from '@angular/router';
+import { AuthModalComponent } from './auth-demo/auth-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [
@@ -51,7 +53,8 @@ import { RouterModule } from '@angular/router';
             InMemoryDataService, {dataEncapsulation: false}
         ),
         MatSidenavModule,
-        RouterModule
+        RouterModule,
+        NgbModule
     ],
     declarations: [
         AppComponent,
@@ -81,6 +84,7 @@ import { RouterModule } from '@angular/router';
         DisplayComponent,
         RouteBackComponent,
         RxjsDemoComponent,
+        AuthModalComponent,
     ],
     providers: [],
     bootstrap: [AppComponent]
