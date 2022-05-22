@@ -12,6 +12,7 @@ import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component
 import { SParentComponent } from './services-demo/s-parent.component';
 import { RouterDemoComponent } from './router-demo/router-demo.component';
 import { RouteBackComponent } from './router-demo/route-back.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -25,8 +26,10 @@ const routes: Routes = [
     {path: 'template-lifecycle-demo', component: TlParentComponent},
     {path: 'services-demo', component: SParentComponent},
     {
-        path: 'router-demo', component: RouterDemoComponent, children: [
-            /* */
+        path: 'router-demo',
+        canActivate: [AuthGuardService],
+        component: RouterDemoComponent,
+        children: [ /* also applies to all child routes. */
             {path: ':id1/:id2', component: RouteBackComponent}, /* KEY-R1 */
             {path: ':id1/:id2', component: RouteBackComponent},
         ]
