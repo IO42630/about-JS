@@ -60,8 +60,7 @@ function inArray(arrayToCheck, value) {
 }
 
 var randArray = [1, 2, 3, 4, 5];
-
-document.write("In Array : ", inArray(randArray, 4), "<br />");
+const test1 = inArray(randArray, 4)
 
 // Local variables defined in functions can't be accessed outside of
 // the function
@@ -82,7 +81,7 @@ function multiply(func, num) {
     return func(num);
 }
 
-document.write("3 * 15 = ", multiply(times3, 15), "<br />");
+const test2 =  multiply(times3, 15);
 
 // Define a function expression
 // We can assign functions to variables, store them in arrays,
@@ -91,30 +90,20 @@ var triple = function (num) {
     return num * 3;
 };
 
-document.write("3 * 45 = ", multiply(triple, 45), "<br />");
+const test3 = multiply(triple, 45);
 
 // Receive variable number of arguments
-function getSum() {
-    var sum = 0;
-    for (i = 0; i < arguments.length; i++) {
-        sum += arguments[i];
-    }
-    return sum;
+function getSum(...args) {
+    return args.reduce((e, acc) => acc + e);
 }
 
-document.write("Sum : ", getSum(1, 2, 3, 4, 5), "<br />");
+const test5 = getSum(1, 2, 3, 4, 5);
 
-// Return a variable number of values
-function times2(theArray) {
 
-    var newArray = [];
-    for (i = 0; i < theArray.length; i++) {
-        newArray.push(theArray[i] * 2);
-    }
-    return newArray;
-}
+const anonVarTimes = (...args) => args.map(x => x * x); // map creates new array
 
-document.write("Array Doubled : ", times2([1, 2, 3, 4, 5]).toString(), "<br />");
+
+
 
 // Recursive Function
 function factorial(num) {
@@ -142,3 +131,20 @@ function doBar(obj) {
 }
 
 doBar(obj2);
+
+// JS is call-by-sharing (a.k.a call-by-object)
+const fun32 = (a,b,c) => {
+    // in any case a param is a local var
+    // containing a reference
+    // we can either modify the obj behind the reference
+    // or we can assign a new reference
+    a = a * 10;
+    b.item = 'BB'
+    c = { item : 'CC'}
+}
+
+ax = 10; // -> 10
+bx = { item : 'B'}; // -> BB
+cx = { item :  'C'}; // -> C
+fun32(ax, bx, cx)
+

@@ -21,34 +21,22 @@ delete someArr[3]; // -> [ 'A', 'D', 2 ]
 
 // TODO continue here
 
-// Sort an array (reverse() for reverse sort)
-// Works for sorting strings
-someArr.sort();
 
-// Sort numbers
-var numbers = [4, 3, 9, 1, 20, 43];
+someArr.sort(); // -> [ 2, 'A', 'D' ]
+someArr.reverse(); // -> [ 'D', 'A', 2 ]
 
-// Descending sort return y - x
-numbers.sort(function (x, y) {
-    return x - y
-});
-document.write("Num Array : ", numbers.toString(), "<br />");
+var numArr = [1, 3, 2];
+numArr.sort((x, y) => x - y); // ascending -> [ 1, 2, 3 ]
 
-// Combine arrays
-var combinedArray = numbers.concat(someArr);
+var combinedArray = numArr.concat(someArr); // [ 1, 2, 3, 'D', 'A', 2 ]
 
-// Remove the last item
-someArr.pop();
 
-// Add items to the end
-someArr.push("555-1212", "US");
+someArr.pop(); // remove the last item
+someArr.push("555-1212", "US"); // add items to the end
+someArr.shift(); // delete the first item
+someArr.unshift("Tom Smith"); // add item to the first index
 
-// Deletes the first item
-someArr.shift();
 
-// Adds item to the first index
-someArr.unshift("Tom Smith");
 
-for (var i = 0; i < someArr.length; i++) {
-    document.write(someArr[i], "<br />");
-}
+someArr.filter( x => x > 2)
+    .forEach( x => console.log(x))
