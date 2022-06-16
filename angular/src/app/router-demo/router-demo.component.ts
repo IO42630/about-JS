@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from '../auth-demo/auth.service';
 import { CanExit } from '../auth-demo/exit-guard.service';
 import { Observable } from 'rxjs';
@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
     template: `
         <ul class="list-group">
             <li class="list-group-item">
-                <a class="nav-link" routerLink="/" routerLinkActive="text-success"
-                >"active" because active route contains /.</a>
+                <a class="nav-link" routerLink="/" routerLinkActive="text-success">
+                    "active" because active route contains /.</a>
             </li>
             <li class="list-group-item">
                 <a class="nav-link" routerLink="/" routerLinkActive="text-success" [routerLinkActiveOptions]="{exact: true}"
@@ -51,9 +51,6 @@ export class RouterDemoComponent implements CanExit {
         private auth: AuthService,
     ) {}
 
-    canExit(): boolean | Observable<boolean> | Promise<boolean> {
-        return false;
-    }
 
     onClick() {
         this.router.navigate(['/route-back-demo', 'hello', 'world']);
@@ -77,5 +74,12 @@ export class RouterDemoComponent implements CanExit {
             }
         );
     }
+
+    /* GUARD LOGIC (see auth-demo) */
+
+    canExit(nextState?: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+        return !!nextState && nextState.url.includes('route-back');
+    }
+
 
 }

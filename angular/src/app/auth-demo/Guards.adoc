@@ -1,0 +1,16 @@
+= Guards
+
+* `Routes[]` support attributes, such as:
+- `{ canActivate: [foo: CanActivate] }`
+- `{ canDeactivate: [bar: CanDeactivate] }`
+* `CanActivate<Faz>.canActivate()` is a functional interface.
+* `Faz.canFaz()` is a functional interface, defined by the user.
+* via canon, henceforth:
+
+[source,typescript]
+CanActivate<Faz>.canActivate(component: Faz, ...) {
+    return component.canFaz();
+}
+
+* now, every component in the route can implement +
+`Faz.canFaz()` to determine if it `.canActivate()`

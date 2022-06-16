@@ -3,7 +3,7 @@ import { CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } f
 import { Injectable } from '@angular/core';
 
 export interface CanExit {
-    canExit: () => Observable<boolean> | Promise<boolean> | boolean;
+    canExit: (nextState?: RouterStateSnapshot) => Observable<boolean> | Promise<boolean> | boolean;
 }
 
 @Injectable({
@@ -11,12 +11,11 @@ export interface CanExit {
 })
 export class ExitGuardService implements CanDeactivate<CanExit> {
 
-
     canDeactivate(component: CanExit,
                   currentRoute: ActivatedRouteSnapshot,
                   currentState: RouterStateSnapshot,
                   nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-        return component.canExit();
+        return component.canExit(nextState);
     }
 
 }

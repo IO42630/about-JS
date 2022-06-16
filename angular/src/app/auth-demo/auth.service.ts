@@ -6,21 +6,19 @@ import { Subject, Observable, of } from 'rxjs';
 })
 export class AuthService {
 
-
     auth = false;
 
     isAuthenticated(): boolean {
         return this.auth;
     }
 
-
     login() {
-        console.log('login')
+        console.log('login');
         this.auth = true;
     }
 
     logout() {
-        console.log('logout')
+        console.log('logout');
         this.auth = false;
     }
 

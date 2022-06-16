@@ -89,4 +89,9 @@ The convention for Angular applications is to have a .spec.ts file for each .ts 
 
 ==== Debugging
 
-* Browser > Sources > webpack > contains ts files (mapped via source map)
+* without IDE
+- Browser > Sources > webpack > contains ts files (mapped via source map)
+* with IDE (wip)
+- npm run start
+
+image:img/ng-debug.png[,60%]
