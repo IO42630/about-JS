@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { DashboardComponent } from './heroes/components/dashboard.component';
 import { HeroesComponent } from './heroes/components/heroes.component';
 import { HeroDetailComponent } from './heroes/components/hero-detail.component';
@@ -29,19 +28,22 @@ const routes: Routes = [
     {path: 'template-lifecycle-demo', component: TlParentComponent},
     {path: 'services-demo', component: SParentComponent},
     {path: 'bootstrap-demo', component: BootstrapDemoComponent},
+    /* ROUTER DEMO START */
     {
         path: 'router-demo',
         canActivate: [AuthGuardService],
-        canDeactivate: [ExitGuardService],
+        canDeactivate: [ExitGuardService], /* also applies to nested routes. */
         component: RouterDemoComponent,
         resolve: {server12: ServerResolverService}, /* alternative to onInit */
-        children: [ /* also applies to all child routes. */
+        children: [ /* nested router config. */
             {path: ':id1/:id2', component: RouteBackComponent}, /* KEY-R1 */
-            {path: ':id1/:id2', component: RouteBackComponent, data: {hello: 'world'}},
+            {path: ':id1', component: RouteBackComponent, data: {world: 'placeholder'}},
         ]
     },
     /* '/' allowed as separator between params :id */
     {path: 'route-back-demo/:id1/:id2', component: RouteBackComponent}, /* KEY-R2 */
+    {path: 'route-back-demo/:id1', component: RouteBackComponent, data: {data2: 'placeholder'}},
+    /* ROUTER DEMO END */
     {path: '**', redirectTo: ''}, /* redirect all routes to '' */
     /* since Routes is checked entry be entry,
     * this results in "redirect all not defined routes to ''". */

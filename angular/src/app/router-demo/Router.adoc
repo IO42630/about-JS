@@ -27,3 +27,7 @@
 *** locahlost:4200/#/foo/bar (ignore all after #)
 
 
+===== Parameters
+
+* `route.params`, `route.queryParams`, `route.data` are 3 distinct param sources.
+- `data` can be passed via `Routes[]` (maybe also other via ...)
