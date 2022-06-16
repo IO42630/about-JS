@@ -1,9 +1,0 @@
-
-
-Different syntax for :
-
-[source]
-@Component({
-  selector: '[app-selector-demo]', // <-
-  templateUrl: './selector-demo.component.html'
-})

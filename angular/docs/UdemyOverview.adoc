@@ -1,0 +1,25 @@
+* (02) Basics ✔️
+* (04) Debugging ✔️
+* (05) Databinding ✔️
+* (07) Directories ✔️
+* (09) Services / DI ✔️
+* (11) Routing ✔️
+* (13) Observables
+* (15) Forms
+* (17) Pipes
+* (18) Http
+* (20) Auth / Route Protection
+* (21) Dynamic Components
+* (22) Modules / Optimization
+* (23) Deployment
+* (24) Standalone Components
+* (25) NgRx
+* (26) Angular Universal
+* (27) Angular Animation
+* (28) Offline Capabilities
+* (29) Testing
+* (30) Ng as a Platform / CLI
+* (31) New Features
+
+
+

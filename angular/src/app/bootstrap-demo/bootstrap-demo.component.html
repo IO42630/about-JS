@@ -1,0 +1,19 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" (click)="selected='grids'">Grids</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="selected='forms'">Forms</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="selected='media'">Media</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" (click)="selected='misc'">Misc</a>
+    </li>
+</ul>
+
+<app-grids-bootstrap *ngIf="selected == 'grids'"></app-grids-bootstrap>
+<app-forms-bootstrap *ngIf="selected == 'forms'"></app-forms-bootstrap>
+<app-media-bootstrap *ngIf="selected == 'media'"></app-media-bootstrap>
+<app-misc-bootstrap *ngIf="selected == 'misc'"></app-misc-bootstrap>
