@@ -1,10 +1,18 @@
 = Services
 
+=== Injection
+
+* configuration:
+- `@Injectable({providedIn: ...})` in Service
+- `@NgModule({providers: ...})` in Module
+- `@Component({providers: ...})` in Component
+* injection:
+- the injection itself happens in the Component via `constructor` param.
+
+{empty} +
+
 === Injection Hierarchy
 
-* used terms
-** `[providers]=` determines where service is 'provided'.
-** 'injection' is determined via `constructor` params
 * services injected into an outer component are inherited to the nested component.
 * if provide an inherited service again, it is overridden
 ** thus, a new instance is created and referenced.
