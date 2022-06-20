@@ -1,3 +1,0 @@
-= RxJS
-
-* See angular -> rxjs-demo.

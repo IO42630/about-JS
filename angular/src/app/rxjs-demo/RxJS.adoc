@@ -1,0 +1,16 @@
+= RxJS
+
+* is a library for async using observable sequences.
+* core type `Observable`
+* satellite types:
+- `Observer`
+- `Schedulers`
+- `Subjects`
+* operators to allow handling asynchronous events as collections:
+- map, filter, reduce, every
+
+===== Observable
+
+* wraps data
+** can be subscribed to
+** subscriber will be notified

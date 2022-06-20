@@ -15,6 +15,7 @@ import { AuthGuardService } from './auth-demo/auth-guard.service';
 import { ExitGuardService } from './auth-demo/exit-guard.service';
 import { ServerResolverService } from './router-demo/server-resolver.service';
 import { BootstrapDemoComponent } from './bootstrap-demo/bootstrap-demo.component';
+import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -28,6 +29,7 @@ const routes: Routes = [
     {path: 'template-lifecycle-demo', component: TlParentComponent},
     {path: 'services-demo', component: SParentComponent},
     {path: 'bootstrap-demo', component: BootstrapDemoComponent},
+    {path: 'rxjs-demo', component: RxjsDemoComponent},
     /* ROUTER DEMO START */
     {
         path: 'router-demo',
