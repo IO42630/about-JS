@@ -13,3 +13,4 @@ input.onwheel = function() {console.log('onwheel')}
 mainHTML.oncopy = function() {console.log('oncopy')}
 mainHTML.onpaste = function() {console.log('onpaste')}
 
+document.addEventListener('click', () => console.log('Clicked!'));

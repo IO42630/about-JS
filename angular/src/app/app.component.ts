@@ -49,6 +49,7 @@ export class AppComponent {
         {text: 'Services Demo', link: '/services-demo'},
         {text: 'Router Demo', link: '/router-demo'},
         {text: 'Bootstrap Demo', link: '/bootstrap-demo'},
+        {text: 'RxJS', link: '/rxjs-demo'},
     ];
 
 

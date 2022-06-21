@@ -3,12 +3,28 @@ import { Subscription, Observable, fromEvent, of, Subject, Observer, from, inter
 // tslint:disable-next-line:max-line-length
 import { mergeMap, delay, takeUntil, share, shareReplay, map, scan, filter, take, tap, debounceTime, throttleTime, bufferCount, switchMap, combineLatest, merge, catchError, takeWhile } from 'rxjs/operators';
 
+
+export function print(x, y?) {
+    return console.log(x + (y ? y : '')); // helper
+}
+
 @Component({
     selector: 'app-rxjs-demo',
     template: `
-        <p>
-            rxjs-demo works!
-        </p>
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-light" (click)="intro()">Intro</button>
+            <button type="button" class="btn btn-light" (click)="basic()">Basic</button>
+            <button type="button" class="btn btn-light" (click)="schedulers()">Schedulers</button>
+            <button type="button" class="btn btn-light" (click)="hotVsCold()">Hot vs. Cold</button>
+            <button type="button" class="btn btn-light" (click)="subjectDemo()">Subject</button>
+            <button type="button" class="btn btn-light" (click)="operators()">Operators</button>
+            <button type="button" class="btn btn-light" (click)="switchMap()">SwitchMap</button>
+            <button type="button" class="btn btn-light" (click)="backpressure()">Backpressure</button>
+            <button type="button" class="btn btn-light" (click)="combine()">Combine</button>
+            <button type="button" class="btn btn-light" (click)="errors()">Errors</button>
+            <button type="button" class="btn btn-light" (click)="memLeak()">Mem Leak</button>
+            <button type="button" class="btn btn-light" (click)="magic()">Magic</button>
+        </div>
     `,
     styles: []
 })
@@ -17,253 +33,183 @@ export class RxjsDemoComponent implements OnInit, OnDestroy {
     someSub: Subscription;
 
     ngOnInit(): void {
-        const foo = new Subscription();
         this.someSub = new Observable().subscribe();
+    }
 
-        const print = (x) => console.log(x); // helper
+    ngOnDestroy() {
+        this.someSub.unsubscribe(); // ng will do this by default fro route oses,
+        // but user defined Observers unsub manually here.
+    }
 
-        let subscription0: Subscription;
-        let subscription1: Subscription;
-        let observable0: Observable<any>;
-        let observable1: Observable<any>;
-        let observable2: Observable<any>;
-        let subject0: Subject<any>;
-
-
-        // INTRO ====================
-
-        // an observable emits events (can be done in many ways)
-        // a subscription is created by subscribing to an observable
+    intro() {
+        console.clear();
+        // an ose emits events (can be done in many ways)
+        // a subscription is created by subscribing to an ose
         // an observer can be .completed (closed)
         // a subscription can be .unsubscribed
 
         // manually creating an Observable
-        observable0 = new Observable((observer: Observer<any>) => {
-            observer.next('A');  // emitting event
-            observer.next('B');  // emitting event
-            observer.complete(); // closes the observable
-            observer.next('C');  // C is never emitted
+        let obse = new Observable((obs: Observer<any>) => {
+            obs.next('A');  // emitting event
+            obs.next('B');  // emitting event
+            obs.complete(); // closes the ose
+            obs.next('C');  // C is never emitted
         });
 
-        subscription0 = observable0.subscribe(print); // print function will be called for each time the Observable emits a value.
-        subscription0 = observable0.subscribe(print); // the values are not exhausted. Rather this will print A B again.
-        subscription0.unsubscribe(); // it is good practice to unsubscribe after parsing the events.
-        subscription0 = observable0.subscribe(print); // however this does not prevent us from subscribing again.
+        let sub = obse.subscribe(print); // print function will be called for each time the Observable emits a value.
+        sub = obse.subscribe(print); // the values are not exhausted. Rather this will print A B again.
+        sub.unsubscribe(); // it is good practice to unsubscribe after parsing the events.
+        sub = obse.subscribe(print); // however this does not prevent us from subscribing again.
 
-        observable0 = of('hello');
-        subscription0 = observable0.subscribe(print); // prints word
-        subscription0.unsubscribe();
+        obse = of('hello');
+        sub = obse.subscribe(print); // prints word
+        sub.unsubscribe();
+    }
 
+    basic() {
+        console.clear();
         from('hello').subscribe(print).unsubscribe(); // prints each letter
+        // emits a increasing number each 500ms
+        interval(500).pipe(takeUntil(timer(2000))).subscribe(print); // do not unsub or it will never trigger.
+    }
 
-
-        observable0 = interval(500); // emits a increasing number each 500ms
-        subscription0 = observable0.pipe(takeUntil(timer(2000))).subscribe(print);
-        subscription0.unsubscribe();
-
-
-        // SCHEDULERS =============
-
+    schedulers() {
         // hello3 world3
-        observable0 = of('hello3');
-        subscription0 = observable0.subscribe(x => console.log(x));
+        console.clear();
+        of('hello3').subscribe(print);
         print('world3');
 
         // world4 hello4 (asyncScheduler executes the subscription on the next event loop)
-        const hello4 = of('hello4', asyncScheduler);
-        hello4.subscribe(x => console.log(x));
+        of('hello4', asyncScheduler).subscribe(print);
         print('world4');
+    }
 
-
+    hotVsCold() {
         // HOT (multi) vs COLD (single) ===========
-
-        // cold observables don't create the underlying value until they are subscribed to
+        console.clear();
+        // cold oses don't create the underlying value until they are subscribed to
         const cold = new Observable(x => x.next(Math.random()));
-        cold.subscribe(print);
-        cold.subscribe(print); // two separate random values
+        cold.subscribe((y) => print('cold ', y));
+        cold.subscribe((x) => print('cold ', x)); // two separate random values
 
         // how to make cold observer hot
         let hot = cold.pipe(share());
-        hot.subscribe(print);
-        hot.subscribe(print); // only first subscriber gets value
-
+        hot.subscribe((x) => print('hot  ', x));
+        hot.subscribe((x) => print('hot  ', x)); // only first subscriber gets value
 
         // cache the last value
         hot = cold.pipe(shareReplay(1));
-        hot.subscribe(print);
-        hot.subscribe(print); // both get the same random number
+        hot.subscribe((x) => print('hot shared ', x));
+        hot.subscribe((x) => print('hot shared ', x)); // both get the same random number
+    }
 
-
-        // Instead of making cold observables hot - create subjects.
+    subjectDemo() {
+        console.clear();
+        // Instead of making cold oses hot - create subjects.
         // Subjects are hot & can have values pushed to them after they are created
-        subject0 = new Subject();
-        subject0.subscribe(print); // subscription must happen before events are pushed
-        subject0.next('foo');      // new event is pushed
-        subject0.subscribe(print); // catches nothing , because subscribed after the values were added
+        const sj = new Subject();
+        sj.subscribe(print); // subscription must happen before events are pushed
+        sj.next('foo');      // new event is pushed
+        sj.subscribe(print); // catches nothing , because subscribed after the values were added
 
         // BehaviorSubject
         // last value will be cached
-        const bs = new BehaviorSubject('foo');
-        bs.subscribe(print); // -> foo bar
-        bs.next('bar');
-        bs.subscribe(print); // -> bar
+        const bsj = new BehaviorSubject('foo');
+        bsj.subscribe(print); // -> foo bar
+        bsj.next('bar');
+        bsj.subscribe(print); // -> bar
+    }
 
-
-        // OPERATORS =================
-
-        observable0 = from([1, 2, 3, 4]);
-        observable0
-            .pipe()
+    operators() {
+        console.clear();
+        const ose0: Observable<any> = from([1, 2, 3, 4]);
+        ose0.pipe()
             .pipe(map(x => 2 * x))
             .subscribe(print).unsubscribe();
 
-        observable2 = observable0.pipe(scan((acc, val) => acc + val));
-        // how would one go about adding all of the values
+        ose0.pipe(scan((acc, val) => acc + val)).subscribe(print).unsubscribe();
 
-        observable1.subscribe(print);
-        observable2.subscribe(print).unsubscribe();
+        ose0.pipe(filter(x => x > 5)).subscribe(print).unsubscribe();
 
-        observable2 = observable1.pipe(filter(x => x > 10));
-        observable2.subscribe(print).unsubscribe();
-
-        // take 3 , then complete the observable
-        observable2 = observable1.pipe(take(3));
-        observable2.subscribe(print);
-
+        // take 3 , then complete the ose
+        ose0.pipe(take(3)).subscribe(print).unsubscribe();
 
         // chain and tap
         // tap gets called each time .next is called
         print('chain and tap');
-        observable2 = observable0.pipe(
+        ose0.pipe(
             map(v => v),
             tap(print),
-            map(x => x));
-        observable2.subscribe(print);
-
-
-        // BACKPRESSURE ============
-
-        // more values are generated, that can reasonably be used
-        observable0 = fromEvent(document, 'mousemove');
-        observable1 = observable0.pipe(debounceTime(1000)); // filter events, until they have stopped happening
-        subscription1 = observable1.subscribe();
-        subscription1.unsubscribe();
-
-        observable1 = observable0.pipe(throttleTime(1000)); // get first event, wait, get next event (next == current or next in buffer?)
-
-
-        observable1 = observable0.pipe(bufferCount(20)); // collect 20 events then emit them
-
-
-        // SWITCHMAP
-        let user: Observable<any> = of('userName');
-
-        // this is a func that returns observables
-        let fetchOrders = (userID) => {
-            return of((userID + ' orders'));
-        };
-
-        // bad pattern
-        user.subscribe(_user => {
-            fetchOrders(_user).subscribe(print);
-        });
-
-        // good pattern
-        let userOrders1 = user.pipe(
-            switchMap(_user => {return fetchOrders(_user);})
-        );
-
-        userOrders1.subscribe(print);
-
-
-        // COMBINING ==============
-
-        observable1 = Observable.create(o => o.next(Math.random())); // cold obs
-        let delayed: Observable<any> = observable1.pipe(delay(1000)); //
-
-        // wait for all observables to emit a value, then print
-        // wait fo r a change in one of the observes, then emit
-        let combo = combineLatest([
-            delayed,
-            observable1,
-            observable1,
-        ]);
-
-        // merge
-        // will emit any of the 3 values as they come, first in
-        let merged = merge(
-            delayed,
-            observable1,
-            observable1,
-        );
-
-
-        // ERRORS
-        subject0 = new Subject();
-        subject0.pipe(
-            catchError(err => of('error occurred')),
-            // retry(2);
+            map(x => x)
         ).subscribe(print);
+    }
 
-        subject0.next('good');
-        subject0.error('error');
+    switchMap() {
+        console.clear();
+        const uNameOse = of('uName');
+        // this is a func that returns oses
+        const fetchOrders = (uName) => of((uName + ' orders'));
+        // bad pattern
+        uNameOse.subscribe(u => fetchOrders(u).subscribe(print));
+        // good pattern
+        uNameOse.pipe(switchMap(u => fetchOrders(u))).subscribe(print);
+    }
 
-        // MEMORY LEAKS
-        observable1 = interval(100);
+    /**
+     * more values are generated, that can reasonably be used
+     */
+    backpressure() {
+        console.clear();
+        const ose0 = fromEvent(document, 'mousemove');
+        // filter events, until they have stopped happening
+        ose0.pipe(debounceTime(1000)).pipe(take(10)).subscribe(() => print('debounce')).unsubscribe();
+        // get first event, wait, get next event (next == current or next in buffer?)
+        ose0.pipe(throttleTime(1000)).pipe(take(100)).subscribe(() => print('throttle')).unsubscribe();
+        // collect 20 events then emit them
+        ose0.pipe(bufferCount(20)).pipe(take(100)).subscribe(() => print('buffer')).unsubscribe();
+    }
 
-        subscription0 = observable1.subscribe(v => {
+    combine() {
+        console.clear();
+        const ose = new Observable(x => x.next(Date.now() + '-' + Math.random())); // cold obs
+        const delayed = ose.pipe(delay(1000)); //
+
+        // wait for all oses to emit a value, then emit
+        const combo = combineLatest(delayed, ose, ose);
+        of('combo').pipe(combo).subscribe(print);
+
+        // will emit any of the 3 values as they come
+        const merged = merge(delayed, ose, ose);
+        of('merged').pipe(merged).subscribe(print);
+    }
+
+    errors() {
+        console.clear();
+        const sj = new Subject();
+        sj.pipe(catchError(() => of('error occurred')))
+            .subscribe(print);
+        sj.next('good');
+        sj.error('error');
+    }
+
+    memLeak() {
+        console.clear();
+        const ose1 = interval(100);
+        const subscription0 = ose1.subscribe(v => {
             print(v);
-            if (v >= 10) {
+            if (v > 5) {
                 subscription0.unsubscribe();
             }
         });
-
-
-        // Better
-        observable2 = observable1.pipe(takeWhile(v => v <= 10));
-        subscription0 = observable2.subscribe(print);
-
-        // better 2
-        observable2 = observable1.pipe(takeUntil(timer(1000)));
-
+        ose1.pipe(takeWhile((v) => v < 5)).subscribe(print);
+        ose1.pipe(takeUntil(timer(500))).subscribe(print);
     }
 
-    ngOnDestroy() {
-        this.someSub.unsubscribe(); // ng will do this by default fro route observables,
-        // but user defined observables unsub manually here.
-    }
-
-    constructor() {
-        document.addEventListener('keyup', x => {
-            console.log('keys pressed');
-        });
-
-        let i = 0;
-
-        const delayEvent = fromEvent(document, 'click');
-
-        const mergedEvents = delayEvent.pipe(mergeMap(value => of(value).pipe(delay(1000))));
-
-
-        // const moreDelay = mergedEvents.pipe(delay(1000));
-
-        mergedEvents.subscribe(output => {console.log(++i); });
-
-    }
-
-
-    foo() {
-        document.addEventListener('click', () => console.log('Clicked!'));
-
-
-        const basic = Observable.create(observer => {
-            observer.next('A');
-            observer.next('B');
-            observer.next('C');
-            observer.next('D');
-        });
-
-        basic.subscribe(v => console.log(v));
+    magic() {
+        console.clear();
+        const clickOse = fromEvent(document, 'click');
+        clickOse.pipe(mergeMap(value => of(value).pipe(delay(1000))))
+            .subscribe(print);
     }
 
 }

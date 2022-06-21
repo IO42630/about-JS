@@ -12,5 +12,10 @@
 ===== Observable
 
 * wraps data
-** can be subscribed to
-** subscriber will be notified
+- can be subscribed to
+- subscriber will be notified
+* _cold_ by default
+- will create value, once subscribed
+- thus, should be called 'viewable'
+
+
