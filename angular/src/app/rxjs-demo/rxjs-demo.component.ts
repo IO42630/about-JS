@@ -49,20 +49,20 @@ export class RxjsDemoComponent implements OnInit, OnDestroy {
         // a subscription can be .unsubscribed
 
         // manually creating an Observable
-        let obse = new Observable((obs: Observer<any>) => {
+        let ole = new Observable((obs: Observer<any>) => {
             obs.next('A');  // emitting event
             obs.next('B');  // emitting event
-            obs.complete(); // closes the ose
+            obs.complete(); // closes the ose // can be used as part of ose loop logic
             obs.next('C');  // C is never emitted
         });
 
-        let sub = obse.subscribe(print); // print function will be called for each time the Observable emits a value.
-        sub = obse.subscribe(print); // the values are not exhausted. Rather this will print A B again.
+        let sub = ole.subscribe(print); // print function will be called for each time the Observable emits a value.
+        sub = ole.subscribe(print); // the values are not exhausted. Rather this will print A B again.
         sub.unsubscribe(); // it is good practice to unsubscribe after parsing the events.
-        sub = obse.subscribe(print); // however this does not prevent us from subscribing again.
+        sub = ole.subscribe(print); // however this does not prevent us from subscribing again.
 
-        obse = of('hello');
-        sub = obse.subscribe(print); // prints word
+        ole = of('hello');
+        sub = ole.subscribe(print); // prints word
         sub.unsubscribe();
     }
 
@@ -184,12 +184,29 @@ export class RxjsDemoComponent implements OnInit, OnDestroy {
     }
 
     errors() {
+        // handle data
+        // handle error
+        // handle completion
         console.clear();
         const sj = new Subject();
         sj.pipe(catchError(() => of('error occurred')))
             .subscribe(print);
         sj.next('good');
         sj.error('error');
+
+        // Observer is a weird term - it basically means the logic that the Observer will effectively execute by observing the Observable
+        const ose = new Observable((obs: Observer<any>) => {
+            obs.next('hello');
+            obs.error(new Error('error'));
+            obs.next('world'); // error cancels the obs (no next/completion happens)
+            obs.complete();
+        });
+
+        ose.subscribe(
+            data => console.log(data),
+            (error: Error) => console.error(error.message),
+            () => console.log('complete hook is never exe')
+        );
     }
 
     memLeak() {
