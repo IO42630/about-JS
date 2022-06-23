@@ -18,4 +18,7 @@
 - will create value, once subscribed
 - thus, should be called 'viewable'
 
+===== Subject
+
+* can be used to replace `EventEmitter`
 
