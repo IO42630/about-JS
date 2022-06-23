@@ -16,6 +16,7 @@ import { ExitGuardService } from './auth-demo/exit-guard.service';
 import { ServerResolverService } from './router-demo/server-resolver.service';
 import { BootstrapDemoComponent } from './bootstrap-demo/bootstrap-demo.component';
 import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
+import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -30,6 +31,7 @@ const routes: Routes = [
     {path: 'services-demo', component: SParentComponent},
     {path: 'bootstrap-demo', component: BootstrapDemoComponent},
     {path: 'rxjs-demo', component: RxjsDemoComponent},
+    {path: 'forms-demo', component: FormsDemoComponent},
     /* ROUTER DEMO START */
     {
         path: 'router-demo',

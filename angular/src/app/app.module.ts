@@ -43,6 +43,7 @@ import { FormsBootstrapComponent } from './bootstrap-demo/forms-bootstrap.compon
 import { GridsBootstrapComponent } from './bootstrap-demo/grids-bootstrap.component';
 import { MediaBootstrapComponent } from './bootstrap-demo/media-bootstrap.component';
 import { MiscBootstrapComponent } from './bootstrap-demo/misc-bootstrap.component';
+import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 
 @NgModule({
     imports: [
@@ -96,7 +97,8 @@ import { MiscBootstrapComponent } from './bootstrap-demo/misc-bootstrap.componen
         FormsBootstrapComponent,
         GridsBootstrapComponent,
         MediaBootstrapComponent,
-        MiscBootstrapComponent
+        MiscBootstrapComponent,
+        FormsDemoComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

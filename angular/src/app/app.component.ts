@@ -50,6 +50,7 @@ export class AppComponent {
         {text: 'Router Demo', link: '/router-demo'},
         {text: 'Bootstrap Demo', link: '/bootstrap-demo'},
         {text: 'RxJS', link: '/rxjs-demo'},
+        {text: 'Forms', link: '/forms-demo'},
     ];
 
 

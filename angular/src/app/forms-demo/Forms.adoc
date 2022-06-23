@@ -1,0 +1,7 @@
+= Forms
+
+===== Basic
+
+* use `<form>`
+- 'register' input by supplying `ngModel`
+- name the input via `name='foo'`
