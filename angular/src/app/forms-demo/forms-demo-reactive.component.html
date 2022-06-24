@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form
+                [formGroup]="someForm"
+                (ngSubmit)="onSubmit()"
+            >
+                <div formGroupName="userData">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            id="username"
+                            formControlName="username"
+                            class="form-control">
+                    </div>
+                    <span *ngIf="!someForm.get('userData.username').valid && someForm.get('userData.username').touched"
+                        [ngClass]="(!someForm.get('userData.username').valid && someForm.get('userData.username').touched) ? 'io-invalid' : ''"
+                        class="help-block">Enter VALID
+                        <span *ngIf="someForm.get('userData.username').errors['nameIsForbidden']">
+                            Name is forbidden.
+                        </span>
+                    </span>
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input
+                            type="text"
+                            id="email"
+                            formControlName="email"
+                            class="form-control">
+                    </div>
+                </div>
+                <div class="radio" *ngFor="let fruit of fruits">
+                    <label>
+                        <input
+                            type="radio"
+                            formControlName="fruits"
+                            [value]="fruit">{{ fruit }}
+                    </label>
+                </div>
+                <div formArrayName="hobbies">
+                    <h4>hobbies</h4>
+                    <button class="btn btn-primary" type="button"
+                        (click)="onAddHobby()">AddHobby
+                    </button>
+                    <div class="form-group"
+                        *ngFor="let hobbyControl of someForm.get('hobbies').controls; let i = index">
+                        <input type="text" class="form-control" [formControlName]="i">
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

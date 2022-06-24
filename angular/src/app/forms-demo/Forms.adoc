@@ -5,3 +5,26 @@
 * use `<form>`
 - 'register' input by supplying `ngModel`
 - name the input via `name='foo'`
+* inside `<form>` a `<button>` with `type="submit"` will trigger form submission
+- _ng_ taps into this by providing an `(ngSubmit)` on the `<form>`
+
+===== NgForm
+
+* set up via `#foo="ngForm"`
+* `dirty` -> changed value
+* `touched` -> clicked (without changing value)
+
+===== NgModel
+
+* as a *binding*:
+- no binding (just register as a control) `<input ngModel>`
+- one way `<input [ngModel]>`
+- two-way `<input [(ngModel)]>`
+* as a *reference*:
+- set up via `#foo="ngModel"`
+
+===== ngModelGroup
+
+* adds ability to group form fields.
+* as a *reference*:
+- set up via `#foo="ngModel"`

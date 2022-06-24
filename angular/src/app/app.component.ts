@@ -51,6 +51,7 @@ export class AppComponent {
         {text: 'Bootstrap Demo', link: '/bootstrap-demo'},
         {text: 'RxJS', link: '/rxjs-demo'},
         {text: 'Forms', link: '/forms-demo'},
+        {text: 'Forms Reactive', link: '/forms-demo-reactive'},
     ];
 
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // NgModel is imported from here
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // NgModel is imported from here
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './heroes/service/in-memory-data.service';
@@ -44,11 +44,13 @@ import { GridsBootstrapComponent } from './bootstrap-demo/grids-bootstrap.compon
 import { MediaBootstrapComponent } from './bootstrap-demo/media-bootstrap.component';
 import { MiscBootstrapComponent } from './bootstrap-demo/misc-bootstrap.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
+import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.component';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         AppRoutingModule,
         HttpClientModule,
         BrowserAnimationsModule,
@@ -98,7 +100,8 @@ import { FormsDemoComponent } from './forms-demo/forms-demo.component';
         GridsBootstrapComponent,
         MediaBootstrapComponent,
         MiscBootstrapComponent,
-        FormsDemoComponent
+        FormsDemoComponent,
+        FormsDemoReactiveComponent
     ],
     providers: [],
     bootstrap: [AppComponent]
