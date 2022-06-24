@@ -1,0 +1,14 @@
+= Pipes
+
+===== API
+
+* https://angular.io/api?query=pipe
+
+==== filter
+
+* changing value does not trigger the pipe
+* changing param does trigger the pipe (in this casee param = filterCriteria)
+
+* pipes are true by default
+* setting pure to false will trigger pipe on any change to the page
+

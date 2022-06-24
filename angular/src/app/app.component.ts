@@ -52,6 +52,7 @@ export class AppComponent {
         {text: 'RxJS', link: '/rxjs-demo'},
         {text: 'Forms', link: '/forms-demo'},
         {text: 'Forms Reactive', link: '/forms-demo-reactive'},
+        {text: 'Pipes', link: '/pipes-demo'},
     ];
 
 

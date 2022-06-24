@@ -45,6 +45,10 @@ import { MediaBootstrapComponent } from './bootstrap-demo/media-bootstrap.compon
 import { MiscBootstrapComponent } from './bootstrap-demo/misc-bootstrap.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.component';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { ShortenPipe } from './pipes-demo/shorten.pipe';
+import { FilterPipe } from './pipes-demo/filter.pipe';
+import { FilterDirtyPipe } from './pipes-demo/filter-dirty.pipe';
 
 @NgModule({
     imports: [
@@ -101,7 +105,11 @@ import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.com
         MediaBootstrapComponent,
         MiscBootstrapComponent,
         FormsDemoComponent,
-        FormsDemoReactiveComponent
+        FormsDemoReactiveComponent,
+        PipesDemoComponent,
+        ShortenPipe,
+        FilterPipe,
+        FilterDirtyPipe
     ],
     providers: [],
     bootstrap: [AppComponent]
