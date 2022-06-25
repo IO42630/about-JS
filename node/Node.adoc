@@ -1,1 +1,1 @@
-Node.js : JS runtime env that executes JS code outside of a browser.
+Node.js : JS runtime env that executes JS code outside a browser.

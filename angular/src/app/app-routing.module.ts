@@ -19,6 +19,7 @@ import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -36,6 +37,7 @@ const routes: Routes = [
     {path: 'forms-demo', component: FormsDemoComponent},
     {path: 'forms-demo-reactive', component: FormsDemoReactiveComponent},
     {path: 'pipes-demo', component: PipesDemoComponent},
+    {path: 'http-client-demo', component: HttpClientDemoComponent},
     /* ROUTER DEMO START */
     {
         path: 'router-demo',

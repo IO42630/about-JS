@@ -1,26 +1,26 @@
 import { Injectable } from '@angular/core';
-import { InMemoryDbService } from 'angular-in-memory-web-api';
+// import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from '../domain/hero';
 
 @Injectable({
     providedIn: 'root',
 })
-export class InMemoryDataService implements InMemoryDbService {
-    createDb() {
-        const heroesDataStore = [
-            {id: 11, name: 'Dr Nice'},
-            {id: 12, name: 'Narco'},
-            {id: 13, name: 'Bombasto'},
-            {id: 14, name: 'Celeritas'},
-            {id: 15, name: 'Magneta'},
-            {id: 16, name: 'RubberMan'},
-            {id: 17, name: 'Dynama'},
-            {id: 18, name: 'Dr IQ'},
-            {id: 19, name: 'Magma'},
-            {id: 20, name: 'Tornado'}
-        ];
-        return {heroesDataStore};
-    }
+export class InMemoryDataService /*implements InMemoryDbService*/ {
+    // createDb() {
+    //     const heroesDataStore = [
+    //         {id: 11, name: 'Dr Nice'},
+    //         {id: 12, name: 'Narco'},
+    //         {id: 13, name: 'Bombasto'},
+    //         {id: 14, name: 'Celeritas'},
+    //         {id: 15, name: 'Magneta'},
+    //         {id: 16, name: 'RubberMan'},
+    //         {id: 17, name: 'Dynama'},
+    //         {id: 18, name: 'Dr IQ'},
+    //         {id: 19, name: 'Magma'},
+    //         {id: 20, name: 'Tornado'}
+    //     ];
+    //     return {heroesDataStore};
+    // }
 
     // Overrides the genId method to ensure that a hero always has an id.
     // If the heroes array is empty,

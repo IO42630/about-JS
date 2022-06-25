@@ -53,6 +53,7 @@ export class AppComponent {
         {text: 'Forms', link: '/forms-demo'},
         {text: 'Forms Reactive', link: '/forms-demo-reactive'},
         {text: 'Pipes', link: '/pipes-demo'},
+        {text: 'Http Client', link: '/http-client-demo'},
     ];
 
 
