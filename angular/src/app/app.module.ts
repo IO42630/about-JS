@@ -111,7 +111,8 @@ import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.com
         ShortenPipe,
         FilterPipe,
         FilterDirtyPipe,
-        HttpClientDemoComponent
+        HttpClientDemoComponent,
+        CustomEventComponent
     ],
     providers: [],
     bootstrap: [AppComponent]
