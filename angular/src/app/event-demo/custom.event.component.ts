@@ -11,7 +11,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class CustomEventComponent {
 
-    foo: { id: number, name: string };
+    foo: { id: number, name: string } = { id: 1, name: 'hello' };
 
     @Output()
     customEvent = new EventEmitter<{ id: number, name: string }>();
