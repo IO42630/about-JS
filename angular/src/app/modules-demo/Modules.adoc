@@ -1,0 +1,6 @@
+=== Ng Modules
+
+* bundle components/directives/services
+* may split app in multiple modules
+* some Ng features are wrapped in mudules (FormsModule)
+

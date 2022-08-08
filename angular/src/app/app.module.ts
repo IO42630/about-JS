@@ -6,11 +6,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { InMemoryDataService } from './heroes/service/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './heroes/components/dashboard.component';
-import { HeroDetailComponent } from './heroes/components/hero-detail.component';
-import { HeroesComponent } from './heroes/components/heroes.component';
-import { HeroSearchComponent } from './heroes/components/hero-search.component';
-import { MessagesComponent } from './heroes/components/messages.component';
 import { ParentComponent } from './event-demo/parent.component';
 import { ChildComponent } from './event-demo/child.component';
 import { GrandchildComponent } from './event-demo/grandchild.component';
@@ -56,6 +51,7 @@ import { DynamicComponentDemoComponent } from './dynamic-component-demo/dynamic-
 import { AlertComponent } from './dynamic-component-demo/alert.component';
 import { PlaceholderDirective } from './dynamic-component-demo/placeholder.directive';
 import { ModulesDemoComponent } from './modules-demo/modules-demo.component';
+import { HeroesModule } from './heroes/heroes.module';
 
 @NgModule({
     imports: [
@@ -74,15 +70,11 @@ import { ModulesDemoComponent } from './modules-demo/modules-demo.component';
         // ),
         MatSidenavModule,
         RouterModule,
-        NgbModule
+        NgbModule,
+        HeroesModule
     ],
     declarations: [
         AppComponent,
-        DashboardComponent,
-        HeroesComponent,
-        HeroDetailComponent,
-        MessagesComponent,
-        HeroSearchComponent,
         ParentComponent,
         ChildComponent,
         GrandchildComponent,

@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './heroes/components/dashboard.component';
-import { HeroesComponent } from './heroes/components/heroes.component';
-import { HeroDetailComponent } from './heroes/components/hero-detail.component';
 import { ParentComponent } from './event-demo/parent.component';
 import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
 import { DatabindingDemoComponent } from './databinding-demo/databinding-demo.component';
@@ -24,9 +21,6 @@ import { DynamicComponentDemoComponent } from './dynamic-component-demo/dynamic-
 
 const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-    {path: 'dashboard', component: DashboardComponent},
-    {path: 'detail/:id', component: HeroDetailComponent},
-    {path: 'heroes', component: HeroesComponent},
     {path: 'event-demo', component: ParentComponent},
     {path: 'selector-demo', component: SelectorDemoComponent},
     { path: 'databinding-demo', component: DatabindingDemoComponent },
@@ -68,6 +62,6 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes,
         // {useHash: true}
     )],
-    exports: [RouterModule]
+    exports: [RouterModule] // must export, for it to be available in consumer of AppRoutingModule
 })
 export class AppRoutingModule {}
