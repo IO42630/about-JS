@@ -44,16 +44,17 @@ export class AppComponent {
         {text: 'Heroes', link: '/dashboard'},
         {text: 'Event Demo', link: ['/event-demo']}, /* alternative notation */
         {text: 'Selector Demo', link: '/selector-demo'},
-        {text: 'Databinding Demo', link: '/databinding-demo'},
-        {text: 'Template Lifecycle Demo', link: '/template-lifecycle-demo'},
-        {text: 'Services Demo', link: '/services-demo'},
-        {text: 'Router Demo', link: '/router-demo'},
-        {text: 'Bootstrap Demo', link: '/bootstrap-demo'},
-        {text: 'RxJS', link: '/rxjs-demo'},
-        {text: 'Forms', link: '/forms-demo'},
-        {text: 'Forms Reactive', link: '/forms-demo-reactive'},
-        {text: 'Pipes', link: '/pipes-demo'},
-        {text: 'Http Client', link: '/http-client-demo'},
+        { text: 'Databinding Demo', link: '/databinding-demo' },
+        { text: 'Template Lifecycle Demo', link: '/template-lifecycle-demo' },
+        { text: 'Services Demo', link: '/services-demo' },
+        { text: 'Router Demo', link: '/router-demo' },
+        { text: 'Bootstrap Demo', link: '/bootstrap-demo' },
+        { text: 'RxJS', link: '/rxjs-demo' },
+        { text: 'Forms', link: '/forms-demo' },
+        { text: 'Forms Reactive', link: '/forms-demo-reactive' },
+        { text: 'Pipes', link: '/pipes-demo' },
+        { text: 'Http Client', link: '/http-client-demo' },
+        { text: 'Dynamic Component', link: '/dynamic-component-demo' },
     ];
 
 

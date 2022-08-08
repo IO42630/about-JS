@@ -1,0 +1,12 @@
+= Client
+
+=== Options
+
+* `responseType`
+- `json` -> can be auto-converted to JS object.
+- `text` -> for other purposes.
+- `blob`
+
+=== Interceptors
+
+* apply some logic just before request leaves.

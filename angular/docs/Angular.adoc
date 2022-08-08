@@ -95,3 +95,10 @@ The convention for Angular applications is to have a .spec.ts file for each .ts 
 - npm run start
 
 image:img/ng-debug.png[,60%]
+
+=== Component Creation
+
+* assuming there are 3 ways to 'call' a component
+** `<app-foo>` -> `app.module.ts/declarations` -> `class`
+** `app-routing.module.ts` -> `app.module.ts/declarations` -> `class`
+** `componentFactory` -> ``app.module.ts/entryComponents` (before `ng9`)-> `class`

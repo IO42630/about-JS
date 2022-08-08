@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // NgModel is imported from here
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService } from './heroes/service/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -50,6 +50,12 @@ import { ShortenPipe } from './pipes-demo/shorten.pipe';
 import { FilterPipe } from './pipes-demo/filter.pipe';
 import { FilterDirtyPipe } from './pipes-demo/filter-dirty.pipe';
 import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.component';
+import { AuthInterceptorService } from './http-client-demo/auth.interceptor.service';
+import { CustomEventComponent } from './event-demo/custom.event.component';
+import { DynamicComponentDemoComponent } from './dynamic-component-demo/dynamic-component-demo.component';
+import { AlertComponent } from './dynamic-component-demo/alert.component';
+import { PlaceholderDirective } from './dynamic-component-demo/placeholder.directive';
+import { ModulesDemoComponent } from './modules-demo/modules-demo.component';
 
 @NgModule({
     imports: [
@@ -112,9 +118,19 @@ import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.com
         FilterPipe,
         FilterDirtyPipe,
         HttpClientDemoComponent,
-        CustomEventComponent
+        CustomEventComponent,
+        DynamicComponentDemoComponent,
+        AlertComponent,
+        PlaceholderDirective,
+        ModulesDemoComponent
     ],
-    providers: [],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptorService,
+            multi: true
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,0 +1,7 @@
+* any component that is displayed conditionally
+
+
+* loaded programmatically, approaches:
+** `*ngIf` (declarative)
+** dynamic component loader
+*** component created/added via code (imperatively)

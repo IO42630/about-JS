@@ -1,0 +1,7 @@
+= Error
+
+=== Ways of handling Errors
+
+1. via `httpClient.subscribe` -> error (see `client.demo.get`)
+2. via custom `Subject` (see `client.demo.post`)
+3. add man-in-the-middle (`catchError`/`throwError`) (see `post.service.get`)

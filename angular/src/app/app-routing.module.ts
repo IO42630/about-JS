@@ -20,6 +20,7 @@ import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.component';
+import { DynamicComponentDemoComponent } from './dynamic-component-demo/dynamic-component-demo.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -28,26 +29,27 @@ const routes: Routes = [
     {path: 'heroes', component: HeroesComponent},
     {path: 'event-demo', component: ParentComponent},
     {path: 'selector-demo', component: SelectorDemoComponent},
-    {path: 'databinding-demo', component: DatabindingDemoComponent},
-    {path: 'directives-demo', component: DirectivesDemoComponent},
-    {path: 'template-lifecycle-demo', component: TlParentComponent},
-    {path: 'services-demo', component: SParentComponent},
-    {path: 'bootstrap-demo', component: BootstrapDemoComponent},
-    {path: 'rxjs-demo', component: RxjsDemoComponent},
-    {path: 'forms-demo', component: FormsDemoComponent},
-    {path: 'forms-demo-reactive', component: FormsDemoReactiveComponent},
-    {path: 'pipes-demo', component: PipesDemoComponent},
-    {path: 'http-client-demo', component: HttpClientDemoComponent},
+    { path: 'databinding-demo', component: DatabindingDemoComponent },
+    { path: 'directives-demo', component: DirectivesDemoComponent },
+    { path: 'template-lifecycle-demo', component: TlParentComponent },
+    { path: 'services-demo', component: SParentComponent },
+    { path: 'bootstrap-demo', component: BootstrapDemoComponent },
+    { path: 'rxjs-demo', component: RxjsDemoComponent },
+    { path: 'forms-demo', component: FormsDemoComponent },
+    { path: 'forms-demo-reactive', component: FormsDemoReactiveComponent },
+    { path: 'pipes-demo', component: PipesDemoComponent },
+    { path: 'http-client-demo', component: HttpClientDemoComponent },
+    { path: 'dynamic-component-demo', component: DynamicComponentDemoComponent },
     /* ROUTER DEMO START */
     {
         path: 'router-demo',
         canActivate: [AuthGuardService],
         canDeactivate: [ExitGuardService], /* also applies to nested routes. */
         component: RouterDemoComponent,
-        resolve: {server12: ServerResolverService}, /* alternative to onInit */
+        resolve: { server12: ServerResolverService }, /* alternative to onInit */
         children: [ /* nested router config. */
-            {path: ':id1/:id2', component: RouteBackComponent}, /* KEY-R1 */
-            {path: ':id1', component: RouteBackComponent, data: {world: 'placeholder'}},
+            { path: ':id1/:id2', component: RouteBackComponent }, /* KEY-R1 */
+            { path: ':id1', component: RouteBackComponent, data: { world: 'placeholder' } },
         ]
     },
     /* '/' allowed as separator between params :id */
