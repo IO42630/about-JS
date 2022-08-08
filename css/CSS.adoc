@@ -28,6 +28,7 @@ p { color:red; }         /* element */
 p.center { color:red; }  /* elements with class : <p class="center"></p> */
 div > p { color:red; }   /*  child (all p that are children of a div) */
 div + p { color:red; }   /*  sibling (first p that are placed immediately after a div) */
+div[class*="test"] /* div with class containing 'test' */
 
 {empty} +
 
