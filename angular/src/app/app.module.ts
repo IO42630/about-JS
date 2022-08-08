@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // NgModel is imported from here
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // import { InMemoryDataService } from './heroes/service/in-memory-data.service';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParentComponent } from './event-demo/parent.component';
 import { ChildComponent } from './event-demo/child.component';
@@ -52,16 +50,14 @@ import { AlertComponent } from './dynamic-component-demo/alert.component';
 import { PlaceholderDirective } from './dynamic-component-demo/placeholder.directive';
 import { ModulesDemoComponent } from './modules-demo/modules-demo.component';
 import { HeroesModule } from './heroes/heroes.module';
+import { SharedModule } from './shared.module';
 
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule,
-        ReactiveFormsModule,
-        AppRoutingModule,
+        SharedModule,
         HttpClientModule,
         BrowserAnimationsModule,
-
         // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
         // and returns simulated server responses.
         // Remove it when a real server is ready to receive requests.
