@@ -1,0 +1,19 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "express-server.js",
+  "scripts": {
+    "start": "node express-server.js"
+  },
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "jq": "^1.7.2"
+  }
+}
