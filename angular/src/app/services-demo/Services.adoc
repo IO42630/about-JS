@@ -35,6 +35,8 @@
 | Lazy-loaded Module | in loaded module | child injector | if scoped
 |===
 
+* dependencies of lazy-loaded modules become also lazy-loaded (-> new instance!!)
+
 {empty} +
 
 === Magic Mock Web API
