@@ -45,3 +45,4 @@ testem.log
 .DS_Store
 Thumbs.db
 /src/pocket-server/node_modules/
+/src/pocket-server/package-lock.json
