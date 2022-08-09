@@ -13,8 +13,22 @@
 * is-a pattern
 * extract services out of AppModule into CoreModule
 
+{empty} +
+
+===== Eager Loading
+
+* how to extract:
+** extract into new `foo.module.ts`, import it.
+*** the new `foo.module.ts` will naturally export some `FooComponent`
+** link to that `FooComponent` in `app-routing.module.ts`
+* see `selector-demo`.
+
+{empty} +
+
 ===== Lazy Loading
 
-* default -> load all modules on page visit
+* eager (default) -> load all modules on page visit
 * lazy -> load only modules linked to current route
 ** feature module must provide it's own routes
+
+

@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService } from './heroes/service/in-memory-data.service';
 import { AppComponent } from './app.component';
 import { ParentComponent } from './event-demo/parent.component';
 import { ChildComponent } from './event-demo/child.component';
 import { GrandchildComponent } from './event-demo/grandchild.component';
-import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
 import { CoreComponent } from './util/core.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component';
@@ -27,9 +24,6 @@ import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 import { RouterModule } from '@angular/router';
 import { AuthModalComponent } from './auth-demo/auth-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ElementSelectorComponent } from './selector-demo/element-selector.component';
-import { VanillaSelectorComponent } from './selector-demo/vanilla-selector.component';
-import { ClassSelectorComponent } from './selector-demo/class-selector.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
@@ -48,6 +42,7 @@ import { SharedModule } from './shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { DataBindingDemoComponent } from './data-binding-demo/data-binding-demo.component';
 import { BootstrapDemoModule } from './bootstrap-demo/bootstrap-demo.module';
+import { SelectorDemoModule } from './selector-demo/selector-demo.module';
 
 @NgModule({
     imports: [
@@ -60,7 +55,8 @@ import { BootstrapDemoModule } from './bootstrap-demo/bootstrap-demo.module';
         AppRoutingModule,
         NgbModule,
         HeroesModule,
-        BootstrapDemoModule
+        BootstrapDemoModule,
+        SelectorDemoModule,
     ],
     declarations: [
         AppComponent,
@@ -68,8 +64,6 @@ import { BootstrapDemoModule } from './bootstrap-demo/bootstrap-demo.module';
         ParentComponent,
         ChildComponent,
         GrandchildComponent,
-        SelectorDemoComponent,
-        ClassSelectorComponent,
         CoreComponent,
         DirectivesDemoComponent,
         TlParentComponent,
@@ -85,8 +79,6 @@ import { BootstrapDemoModule } from './bootstrap-demo/bootstrap-demo.module';
         RouteBackComponent,
         RxjsDemoComponent,
         AuthModalComponent,
-        ElementSelectorComponent,
-        VanillaSelectorComponent,
         FormsDemoComponent,
         FormsDemoReactiveComponent,
         PipesDemoComponent,
