@@ -17,7 +17,6 @@ import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.com
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.component';
 import { DynamicComponentDemoComponent } from './dynamic-component-demo/dynamic-component-demo.component';
-import { BootstrapDemoModule } from './bootstrap-demo/bootstrap-demo.module';
 
 const routes: Routes = [
     { path: '', redirectTo: '/event-demo', pathMatch: 'full' },
@@ -30,7 +29,7 @@ const routes: Routes = [
     { path: 'directives-demo', component: DirectivesDemoComponent },
     { path: 'template-lifecycle-demo', component: TlParentComponent },
     { path: 'services-demo', component: SParentComponent },
-    { path: 'bootstrap-demo', component: BootstrapDemoModule },
+    { path: 'bootstrap-demo', loadChildren: () => import('./bootstrap-demo/bootstrap-demo.module').then(m => m.BootstrapDemoModule) },
     { path: 'rxjs-demo', component: RxjsDemoComponent },
     { path: 'forms-demo', component: FormsDemoComponent },
     { path: 'forms-demo-reactive', component: FormsDemoReactiveComponent },
