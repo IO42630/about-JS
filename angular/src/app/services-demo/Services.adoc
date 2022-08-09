@@ -21,3 +21,25 @@
 ** `AppModule` : available application-wide
 ** `AppComponent` : available to all components, but not services
 ** `Component` : available to component and children (if any).
+
+{empty} +
+
+=== Injection (Modules)
+
+|===
+| `providers` in  | available | injector used | usage
+
+| `AppModule` | app-wide | root injector | default
+| `AppComponent`, `Component` | component tree | component specific | if scoped
+| Eager-loaded Module | app-wide | root injector | avoid this
+| Lazy-loaded Module | in loaded module | child injector | if scoped
+|===
+
+{empty} +
+
+=== Magic Mock Web API
+
+1. `InMemoryDbService.createDb()` defines some data store by returning `{xyz}`.
+1. by including `HttpClientInMemoryWebApiModule` in `app.module`, +
+we mock an endpoint at the canonical URL `api/xyz`.
+1. we can now use `HttpClient.get(api/xyz)`
