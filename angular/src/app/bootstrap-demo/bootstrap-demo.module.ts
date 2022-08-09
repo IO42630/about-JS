@@ -5,6 +5,7 @@ import { GridsBootstrapComponent } from './grids-bootstrap.component';
 import { MediaBootstrapComponent } from './media-bootstrap.component';
 import { MiscBootstrapComponent } from './misc-bootstrap.component';
 import { Routes, RouterModule } from '@angular/router';
+import { SharedModule } from '../shared.module';
 
 const routes: Routes = [
     { path: '', component: BootstrapDemoComponent }
@@ -12,6 +13,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
+        SharedModule,
         RouterModule.forChild(routes)
     ],
     declarations: [
