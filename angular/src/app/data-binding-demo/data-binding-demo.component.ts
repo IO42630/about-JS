@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CoreComponent } from '../util/core.component';
 
 @Component({
-    selector: 'app-databinding-demo',
+    selector: 'app-data-binding-demo',
     template: `
         <h4 class="text-warning">STRING INTERPOLATION</h4>
         <p>One {{someString}} {{'Three' + ' Four '}} {{ 5 }}</p>
@@ -33,7 +33,7 @@ import { CoreComponent } from '../util/core.component';
         <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">List of HTML DOM events.</a>
     `
 })
-export class DatabindingDemoComponent extends CoreComponent {
+export class DataBindingDemoComponent extends CoreComponent {
 
     isDisabled = false;
     someText = '';

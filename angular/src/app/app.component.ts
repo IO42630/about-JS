@@ -41,10 +41,10 @@ export class AppComponent {
     ) {}
 
     entries: { text: string, link: any }[] = [
-        {text: 'Heroes', link: '/dashboard'},
-        {text: 'Event Demo', link: ['/event-demo']}, /* alternative notation */
-        {text: 'Selector Demo', link: '/selector-demo'},
-        { text: 'Databinding Demo', link: '/databinding-demo' },
+        { text: 'Heroes', link: '/dashboard' },
+        { text: 'Event Demo', link: ['/event-demo'] }, /* alternative notation */
+        { text: 'Selector Demo', link: '/selector-demo' },
+        { text: 'Databinding Demo', link: '/data-binding-demo' },
         { text: 'Template Lifecycle Demo', link: '/template-lifecycle-demo' },
         { text: 'Services Demo', link: '/services-demo' },
         { text: 'Router Demo', link: '/router-demo' },

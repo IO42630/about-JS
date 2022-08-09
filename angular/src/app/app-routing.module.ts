@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { ParentComponent } from './event-demo/parent.component';
 import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
-import { DatabindingDemoComponent } from './databinding-demo/databinding-demo.component';
+import { DataBindingDemoComponent } from './data-binding-demo/data-binding-demo.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component';
 import { SParentComponent } from './services-demo/s-parent.component';
@@ -11,23 +11,26 @@ import { RouteBackComponent } from './router-demo/route-back.component';
 import { AuthGuardService } from './auth-demo/auth-guard.service';
 import { ExitGuardService } from './auth-demo/exit-guard.service';
 import { ServerResolverService } from './router-demo/server-resolver.service';
-import { BootstrapDemoComponent } from './bootstrap-demo/bootstrap-demo.component';
 import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.component';
 import { DynamicComponentDemoComponent } from './dynamic-component-demo/dynamic-component-demo.component';
+import { BootstrapDemoModule } from './bootstrap-demo/bootstrap-demo.module';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-    {path: 'event-demo', component: ParentComponent},
-    {path: 'selector-demo', component: SelectorDemoComponent},
-    { path: 'databinding-demo', component: DatabindingDemoComponent },
+    { path: '', redirectTo: '/event-demo', pathMatch: 'full' },
+    // { path: 'dashboard', component: DashboardComponent },
+    { path: 'dashboard', loadChildren: () => import('./heroes/heroes.module').then(m => m.HeroesModule) },
+    /* TODO this should be lazy-loading -> check if it actually works */
+    { path: 'event-demo', component: ParentComponent },
+    { path: 'selector-demo', component: SelectorDemoComponent },
+    { path: 'data-binding-demo', component: DataBindingDemoComponent },
     { path: 'directives-demo', component: DirectivesDemoComponent },
     { path: 'template-lifecycle-demo', component: TlParentComponent },
     { path: 'services-demo', component: SParentComponent },
-    { path: 'bootstrap-demo', component: BootstrapDemoComponent },
+    { path: 'bootstrap-demo', component: BootstrapDemoModule },
     { path: 'rxjs-demo', component: RxjsDemoComponent },
     { path: 'forms-demo', component: FormsDemoComponent },
     { path: 'forms-demo-reactive', component: FormsDemoReactiveComponent },
@@ -59,7 +62,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes,
+    imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules } /* use lazy load, but preload all modules */
         // {useHash: true}
     )],
     exports: [RouterModule] // must export, for it to be available in consumer of AppRoutingModule

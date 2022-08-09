@@ -4,3 +4,17 @@
 * may split app in multiple modules
 * some Ng features are wrapped in mudules (FormsModule)
 
+===== Trivia
+
+* components/directives/services can only be declared once.
+
+===== CoreModule
+
+* is-a pattern
+* extract services out of AppModule into CoreModule
+
+===== Lazy Loading
+
+* default -> load all modules on page visit
+* lazy -> load only modules linked to current route
+** feature module must provide it's own routes

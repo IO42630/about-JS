@@ -8,7 +8,6 @@ import { ParentComponent } from './event-demo/parent.component';
 import { ChildComponent } from './event-demo/child.component';
 import { GrandchildComponent } from './event-demo/grandchild.component';
 import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
-import { DatabindingDemoComponent } from './databinding-demo/databinding-demo.component';
 import { CoreComponent } from './util/core.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component';
@@ -22,7 +21,7 @@ import { SChildComponent } from './services-demo/s-child.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterDemoComponent } from './router-demo/router-demo.component';
-import { DisplayComponent } from './databinding-demo/display.component';
+import { DisplayComponent } from './data-binding-demo/display.component';
 import { RouteBackComponent } from './router-demo/route-back.component';
 import { RxjsDemoComponent } from './rxjs-demo/rxjs-demo.component';
 import { RouterModule } from '@angular/router';
@@ -31,11 +30,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ElementSelectorComponent } from './selector-demo/element-selector.component';
 import { VanillaSelectorComponent } from './selector-demo/vanilla-selector.component';
 import { ClassSelectorComponent } from './selector-demo/class-selector.component';
-import { BootstrapDemoComponent } from './bootstrap-demo/bootstrap-demo.component';
-import { FormsBootstrapComponent } from './bootstrap-demo/forms-bootstrap.component';
-import { GridsBootstrapComponent } from './bootstrap-demo/grids-bootstrap.component';
-import { MediaBootstrapComponent } from './bootstrap-demo/media-bootstrap.component';
-import { MiscBootstrapComponent } from './bootstrap-demo/misc-bootstrap.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
@@ -51,6 +45,9 @@ import { PlaceholderDirective } from './dynamic-component-demo/placeholder.direc
 import { ModulesDemoComponent } from './modules-demo/modules-demo.component';
 import { HeroesModule } from './heroes/heroes.module';
 import { SharedModule } from './shared.module';
+import { AppRoutingModule } from './app-routing.module';
+import { DataBindingDemoComponent } from './data-binding-demo/data-binding-demo.component';
+import { BootstrapDemoModule } from './bootstrap-demo/bootstrap-demo.module';
 
 @NgModule({
     imports: [
@@ -58,25 +55,21 @@ import { SharedModule } from './shared.module';
         SharedModule,
         HttpClientModule,
         BrowserAnimationsModule,
-        // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-        // and returns simulated server responses.
-        // Remove it when a real server is ready to receive requests.
-        // HttpClientInMemoryWebApiModule.forRoot(
-        //     InMemoryDataService, {dataEncapsulation: false}
-        // ),
         MatSidenavModule,
         RouterModule,
+        AppRoutingModule,
         NgbModule,
-        HeroesModule
+        HeroesModule,
+        BootstrapDemoModule
     ],
     declarations: [
         AppComponent,
+        DataBindingDemoComponent,
         ParentComponent,
         ChildComponent,
         GrandchildComponent,
         SelectorDemoComponent,
         ClassSelectorComponent,
-        DatabindingDemoComponent,
         CoreComponent,
         DirectivesDemoComponent,
         TlParentComponent,
@@ -94,11 +87,6 @@ import { SharedModule } from './shared.module';
         AuthModalComponent,
         ElementSelectorComponent,
         VanillaSelectorComponent,
-        BootstrapDemoComponent,
-        FormsBootstrapComponent,
-        GridsBootstrapComponent,
-        MediaBootstrapComponent,
-        MiscBootstrapComponent,
         FormsDemoComponent,
         FormsDemoReactiveComponent,
         PipesDemoComponent,
