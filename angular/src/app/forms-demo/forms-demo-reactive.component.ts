@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { logging } from 'protractor';
-import { log } from 'util';
 
 @Component({
     selector: 'app-root',

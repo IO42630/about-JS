@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import {WelcomeComponent} from './components-demo/welcome/welcome.component';
 import { ParentComponent } from './event-demo/parent.component';
 import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
 import { DataBindingDemoComponent } from './data-binding-demo/data-binding-demo.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
     { path: 'pipes-demo', component: PipesDemoComponent },
     { path: 'http-client-demo', component: HttpClientDemoComponent },
     { path: 'dynamic-component-demo', component: DynamicComponentDemoComponent },
+    { path: 'components-demo', component: WelcomeComponent },
     /* ROUTER DEMO START */
     {
         path: 'router-demo',

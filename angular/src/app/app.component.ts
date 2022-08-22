@@ -37,7 +37,7 @@ export class AppComponent {
     modalx;
 
     constructor(
-        private auth: AuthService
+        public auth: AuthService
     ) {}
 
     entries: { text: string, link: any }[] = [
@@ -55,6 +55,7 @@ export class AppComponent {
         { text: 'Pipes', link: '/pipes-demo' },
         { text: 'Http Client', link: '/http-client-demo' },
         { text: 'Dynamic Component', link: '/dynamic-component-demo' },
+        { text: 'Standalone Components', link: '/components-demo' },
     ];
 
 

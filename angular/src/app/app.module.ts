@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import {DetailsComponent} from './components-demo/welcome/details/details.component';
+import {WelcomeComponent} from './components-demo/welcome/welcome.component';
 import { ParentComponent } from './event-demo/parent.component';
 import { ChildComponent } from './event-demo/child.component';
 import { GrandchildComponent } from './event-demo/grandchild.component';
@@ -90,15 +92,18 @@ import { SelectorDemoModule } from './selector-demo/selector-demo.module';
         DynamicComponentDemoComponent,
         AlertComponent,
         PlaceholderDirective,
-        ModulesDemoComponent
+        ModulesDemoComponent,
+        WelcomeComponent,
+            DetailsComponent,
     ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptorService,
-            multi: true
-        }
+            multi: true,
+        },
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
