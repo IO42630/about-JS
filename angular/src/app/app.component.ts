@@ -55,7 +55,8 @@ export class AppComponent {
         { text: 'Pipes', link: '/pipes-demo' },
         { text: 'Http Client', link: '/http-client-demo' },
         { text: 'Dynamic Component', link: '/dynamic-component-demo' },
-        { text: 'Standalone Components', link: '/components-demo' },
+        { text: 'Standalone Components Full', link: '/standalone-components-full-demo' },
+        { text: 'Standalone Components Mixed', link: '/standalone-components-mixed-demo' },
     ];
 
 

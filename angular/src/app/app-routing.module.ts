@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-import {WelcomeComponent} from './components-demo/welcome/welcome.component';
 import { ParentComponent } from './event-demo/parent.component';
 import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
 import { DataBindingDemoComponent } from './data-binding-demo/data-binding-demo.component';
@@ -18,6 +17,8 @@ import { FormsDemoReactiveComponent } from './forms-demo/forms-demo-reactive.com
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.component';
 import { DynamicComponentDemoComponent } from './dynamic-component-demo/dynamic-component-demo.component';
+import { WelcomeFullComponent } from './standalone-components-full-demo/welcome/welcome.component';
+import { WelcomeMixedComponent } from './standalone-components-mixed-demo/welcome/welcome-mixed.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/event-demo', pathMatch: 'full' },
@@ -37,7 +38,8 @@ const routes: Routes = [
     { path: 'pipes-demo', component: PipesDemoComponent },
     { path: 'http-client-demo', component: HttpClientDemoComponent },
     { path: 'dynamic-component-demo', component: DynamicComponentDemoComponent },
-    { path: 'components-demo', component: WelcomeComponent },
+    { path: 'standalone-components-full-demo', component: WelcomeFullComponent },
+    { path: 'standalone-components-mixed-demo', component: WelcomeMixedComponent },
     /* ROUTER DEMO START */
     {
         path: 'router-demo',

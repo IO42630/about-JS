@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {DetailsComponent} from './details/details.component';
 
 /**
  * Standalone Components must be imported.
@@ -9,4 +8,4 @@ import {DetailsComponent} from './details/details.component';
   selector: 'app-welcome',
   templateUrl: './welcome.component.html'
 })
-export class WelcomeComponent {}
+export class WelcomeFullComponent {}

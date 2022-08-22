@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import {DetailsComponent} from './components-demo/welcome/details/details.component';
-import {WelcomeComponent} from './components-demo/welcome/welcome.component';
 import { ParentComponent } from './event-demo/parent.component';
 import { ChildComponent } from './event-demo/child.component';
 import { GrandchildComponent } from './event-demo/grandchild.component';
@@ -45,6 +43,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { DataBindingDemoComponent } from './data-binding-demo/data-binding-demo.component';
 import { BootstrapDemoModule } from './bootstrap-demo/bootstrap-demo.module';
 import { SelectorDemoModule } from './selector-demo/selector-demo.module';
+import { WelcomeFullComponent } from './standalone-components-full-demo/welcome/welcome.component';
+import { WelcomeMixedComponent } from './standalone-components-mixed-demo/welcome/welcome-mixed.component';
+import { DetailsMixedComponent } from './standalone-components-mixed-demo/welcome/details-mixed.component';
 
 @NgModule({
     imports: [
@@ -59,7 +60,7 @@ import { SelectorDemoModule } from './selector-demo/selector-demo.module';
         HeroesModule,
         BootstrapDemoModule,
         SelectorDemoModule,
-        DetailsComponent /* standalone Components are imported instead of declared. */
+        DetailsMixedComponent /* standalone Components are imported instead of declared. */
     ],
     declarations: [
         AppComponent,
@@ -94,7 +95,8 @@ import { SelectorDemoModule } from './selector-demo/selector-demo.module';
         AlertComponent,
         PlaceholderDirective,
         ModulesDemoComponent,
-        WelcomeComponent,
+        WelcomeMixedComponent,
+        WelcomeFullComponent
     ],
     providers: [
         {
