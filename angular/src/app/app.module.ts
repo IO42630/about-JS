@@ -59,6 +59,7 @@ import { SelectorDemoModule } from './selector-demo/selector-demo.module';
         HeroesModule,
         BootstrapDemoModule,
         SelectorDemoModule,
+        DetailsComponent /* standalone Components are imported instead of declared. */
     ],
     declarations: [
         AppComponent,
@@ -94,7 +95,6 @@ import { SelectorDemoModule } from './selector-demo/selector-demo.module';
         PlaceholderDirective,
         ModulesDemoComponent,
         WelcomeComponent,
-            DetailsComponent,
     ],
     providers: [
         {

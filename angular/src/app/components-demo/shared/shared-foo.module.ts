@@ -6,4 +6,4 @@ import { HighlightDirective } from './highlight.directive';
   declarations: [HighlightDirective],
   exports: [HighlightDirective],
 })
-export class SharedModule {}
+export class SharedFooModule {}
