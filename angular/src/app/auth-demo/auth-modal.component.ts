@@ -1,6 +1,7 @@
-import { Component, OnInit, OnChanges, SimpleChanges, ViewChild, Input } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AuthService } from './auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-auth-modal',
@@ -43,7 +44,9 @@ export class AuthModalComponent {
   constructor(
       private modalService: NgbModal,
       private auth: AuthService
-  ) {}
+  ) {
+    console.log('this is', environment.production);
+  }
 
   open() {
     this.modalService.open(this.mymodal, {ariaLabelledBy: 'modal-basic-title'});

@@ -1,0 +1,5 @@
+===== Steps
+
+* check env vars
+* refactor / test
+* `ng build --prod`
