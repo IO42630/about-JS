@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-event-demo',
     template: `
+        <h2>Event Demo</h2>
         <app-child
             [someProperty]="someProperty"
             (someEvent)="someProperty = someProperty + 1"
@@ -16,7 +17,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent {
 
-    someProperty = 0;
+    someProperty = 1;
 
     print(foo) {
         console.log(foo);

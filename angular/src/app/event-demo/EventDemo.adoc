@@ -1,16 +1,17 @@
 = EventDemo
+:toc:
 
-=== What it does.
+{empty} +
 
-* click button in `grandchild`
-* propagate event up to parent
+==== Event Propagation
+
+* click _Add._ in `grandchild`
+* propagate event up to `parent`
 * value++
 * propagate value down to `grandchild`
 * show value in `grandchild`
 
 {empty} +
 
-=== Bonus
-
-* alias
-* custom EventEmitter
+==== Custom Event
+* Can be created by setting a custom type for `EventEmitter`.

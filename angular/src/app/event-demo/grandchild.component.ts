@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-grandchild',
@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         <div class="border border-info">
             <p class="text-info">app-grandchild</p>
             <div>{{someProperty}}</div>
-            <button (click)="someEvent.emit($event)">Add Me!</button>
+            <button (click)="someEvent.emit($event)">Add.</button>
         </div>
     `
 })
