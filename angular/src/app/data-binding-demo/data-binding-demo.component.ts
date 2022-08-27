@@ -4,11 +4,12 @@ import { CoreComponent } from '../util/core.component';
 @Component({
     selector: 'app-data-binding-demo',
     template: `
-        <h4 class="text-warning">STRING INTERPOLATION</h4>
+        <h1>Databinding Demo</h1>
+        <h4 class="text-warning mt-4">STRING INTERPOLATION</h4>
         <p>One {{someString}} {{'Three' + ' Four '}} {{ 5 }}</p>
         <!-- any expression that resolves to string is allowed -->
 
-        <h4 class="text-warning">PROPERTY BINDING</h4>
+        <h4 class="text-warning mt-4">PROPERTY BINDING</h4>
         <button
             class="btn btn-primary"
             [disabled]="isDisabled"
@@ -17,7 +18,7 @@ import { CoreComponent } from '../util/core.component';
         <app-display value="if property is a simple string we can omit the []"></app-display>
         <app-display [value]="'for objects we must use []'"></app-display>
 
-        <h4 class="text-warning">EVENT BINDING</h4>
+        <h4 class="text-warning mt-4">EVENT BINDING</h4>
         <input
             type="text"
             class="form-control"
@@ -26,10 +27,10 @@ import { CoreComponent } from '../util/core.component';
         >
         <p>{{someText}}</p>
 
-        <h4 class="text-warning">TWO-WAY DATA BINDING</h4>
+        <h4 class="text-warning mt-4">TWO-WAY DATA BINDING</h4>
         <input [(ngModel)]='someText'/>
 
-        <h4 class="text-warning">TRIVIA</h4>
+        <h4 class="text-warning mt-4">TRIVIA</h4>
         <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">List of HTML DOM events.</a>
     `
 })

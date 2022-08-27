@@ -2,22 +2,22 @@
 
 image::img/data-binding.svg[width=480]
 
-
-
 === Component => DOM
 
 ==== Interpolation
 Used to output/display some text into the DOM.
-[source,js]
+
+[source,html]
 <li>Email: {{ user.email }}</li>
 
 ==== Property Binding
 
 Used to manipulate attriutes / DOM
 
-[source,js]
+[source,html]
 <input type="email" [value]="user.email">
 
+{empty} +
 
 === DOM => Component
 ==== Event Binding
@@ -34,4 +34,4 @@ Used to manipulate attriutes / DOM
 ==== Two-Way Data Binding
 * combines
 ** interpolation
-** content value propagation via 'event'
+** content value propagation via `event`
