@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { AnalyticsFullService } from '../shared/analytics-full.service';
-import { SharedFullModule } from '../shared/shared-full.module';
+import { HighlightFullDirective } from '../shared/highlight-full.directive';
 
 /**
  * Standalone Compoents must not be declared in any Module.
  */
 @Component({
     standalone: true,
-    imports: [SharedFullModule], /* Use non-standalone Component in an standalone Component. */
+    imports: [HighlightFullDirective],
     selector: 'app-details',
     template: `
         <section (click)="onClick()">

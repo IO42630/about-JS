@@ -11,3 +11,6 @@ if (environment.production) {
 platformBrowserDynamic()
     .bootstrapModule(AppModule)
     .catch(err => console.error(err));
+
+// if makeing the root app.component standalone use this instead:
+// bootstrapAplication(AppComponent, {providers: [Foo]});

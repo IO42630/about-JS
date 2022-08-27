@@ -60,7 +60,8 @@ import { DetailsMixedComponent } from './standalone-components-mixed-demo/welcom
         HeroesModule,
         BootstrapDemoModule,
         SelectorDemoModule,
-        DetailsMixedComponent /* standalone Components are imported instead of declared. */
+        DetailsMixedComponent, /* standalone Components are imported instead of declared. */
+        WelcomeFullComponent,
     ],
     declarations: [
         AppComponent,
@@ -95,8 +96,7 @@ import { DetailsMixedComponent } from './standalone-components-mixed-demo/welcom
         AlertComponent,
         PlaceholderDirective,
         ModulesDemoComponent,
-        WelcomeMixedComponent,
-        WelcomeFullComponent
+        WelcomeMixedComponent
     ],
     providers: [
         {
