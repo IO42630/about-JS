@@ -10,21 +10,36 @@
 
 {empty} +
 
-==== Topics
+==== About the Demo
+* prints the state of 4 _child_:
+** `static` `ViewChild`
+** `ViewChild`
+** `static` `ContentChild`
+** `ContentChild`
 
-* Local Reference
-* Content (ng-content)
-* Lifecycle (hooks)
-
-{empty} +
-
-==== Result
 
 image::img/template-lifecycle.png[]
 
+
+=== `ng-content`
+* HTML elements passed
+** in the content of `<app-..>content</app-..>`
+** to the nested component
+* will be displayed in `<ng-content>` of the nested component if it exists.
+
 {empty} +
 
-==== Lifecycle (hooks)
+=== Local Reference
+* in _template_
+** can reference _element_ : `<p #someLocalReference></p>`
+** or _ng-content_ : `<ng-content #localContentReference></ng-content>`
+* in component
+** when used with `@ViewChild` or `@ContentChild` results in an `ElementRef`
+** mostly used to read state -> do not use to modify state.
+
+{empty} +
+
+=== Lifecycle (hooks)
 
 [cols="1,3"]
 |===

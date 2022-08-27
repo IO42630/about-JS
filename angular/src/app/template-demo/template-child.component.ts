@@ -1,17 +1,18 @@
-import {
-    Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck,
-    AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked,
-    OnDestroy, ViewChild, ContentChild, ElementRef
-} from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ViewChild, ContentChild, ElementRef } from '@angular/core';
 
 @Component({
-    selector: 'app-lifecycle-demo',
+    selector: 'app-template-child',
     template: `
-        <p #someLocalReference>{{someInput}}</p>
-        <ng-content #localContentReference></ng-content>
+        <div class="border border-info m-4">
+            <p class="text-info">app-template-child</p>
+            <span>someLocalReference</span>
+            <p #someLocalReference>{{someInput}}</p>
+            <span>localContentReference</span>
+            <ng-content #localContentReference></ng-content>
+        </div>
     `
 })
-export class TlChildComponent implements
+export class TemplateChildComponent implements
     OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked,
     AfterViewInit, AfterViewChecked, OnDestroy
 {

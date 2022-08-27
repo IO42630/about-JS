@@ -45,7 +45,7 @@ export class AppComponent {
         { text: 'Event Demo', link: ['/event-demo'] }, /* alternative notation */
         { text: 'Selector Demo', link: '/selector-demo' },
         { text: 'Databinding Demo', link: '/data-binding-demo' },
-        { text: 'Template Lifecycle Demo', link: '/template-lifecycle-demo' },
+        { text: 'Template Demo', link: '/template-demo' },
         { text: 'Services Demo', link: '/services-demo' },
         { text: 'Router Demo', link: '/router-demo' },
         { text: 'Bootstrap Demo', link: '/bootstrap-demo' },

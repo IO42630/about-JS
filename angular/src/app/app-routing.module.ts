@@ -4,7 +4,6 @@ import { ParentComponent } from './event-demo/parent.component';
 import { SelectorDemoComponent } from './selector-demo/selector-demo.component';
 import { DataBindingDemoComponent } from './data-binding-demo/data-binding-demo.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
-import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component';
 import { SParentComponent } from './services-demo/s-parent.component';
 import { RouterDemoComponent } from './router-demo/router-demo.component';
 import { RouteBackComponent } from './router-demo/route-back.component';
@@ -19,6 +18,7 @@ import { HttpClientDemoComponent } from './http-client-demo/http-client-demo.com
 import { DynamicComponentDemoComponent } from './dynamic-component-demo/dynamic-component-demo.component';
 import { WelcomeFullComponent } from './standalone-components-full-demo/welcome/welcome.component';
 import { WelcomeMixedComponent } from './standalone-components-mixed-demo/welcome/welcome-mixed.component';
+import { TemplateParentComponent } from './template-demo/template-parent.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/event-demo', pathMatch: 'full' },
@@ -29,7 +29,7 @@ const routes: Routes = [
     { path: 'selector-demo', component: SelectorDemoComponent },
     { path: 'data-binding-demo', component: DataBindingDemoComponent },
     { path: 'directives-demo', component: DirectivesDemoComponent },
-    { path: 'template-lifecycle-demo', component: TlParentComponent },
+    { path: 'template-demo', component: TemplateParentComponent },
     { path: 'services-demo', component: SParentComponent },
     { path: 'bootstrap-demo', loadChildren: () => import('./bootstrap-demo/bootstrap-demo.module').then(m => m.BootstrapDemoModule) },
     { path: 'rxjs-demo', component: RxjsDemoComponent },

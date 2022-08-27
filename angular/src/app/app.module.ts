@@ -7,9 +7,7 @@ import { ChildComponent } from './event-demo/child.component';
 import { GrandchildComponent } from './event-demo/grandchild.component';
 import { CoreComponent } from './util/core.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
-import { TlParentComponent } from './template-lifecycle-demo/tl-parent.component';
 import { EmptyComponent } from './util/empty.component';
-import { TlChildComponent } from './template-lifecycle-demo/tl-child.component';
 import { MyHighlightDirective } from './directives-demo/my-highlight.directive';
 import { MyBetterHighDirective } from './directives-demo/my-better-high.directive';
 import { UnlessDirective } from './directives-demo/unless.directive';
@@ -46,6 +44,8 @@ import { SelectorDemoModule } from './selector-demo/selector-demo.module';
 import { WelcomeFullComponent } from './standalone-components-full-demo/welcome/welcome.component';
 import { WelcomeMixedComponent } from './standalone-components-mixed-demo/welcome/welcome-mixed.component';
 import { DetailsMixedComponent } from './standalone-components-mixed-demo/welcome/details-mixed.component';
+import { TemplateParentComponent } from './template-demo/template-parent.component';
+import { TemplateChildComponent } from './template-demo/template-child.component';
 
 @NgModule({
     imports: [
@@ -71,9 +71,9 @@ import { DetailsMixedComponent } from './standalone-components-mixed-demo/welcom
         GrandchildComponent,
         CoreComponent,
         DirectivesDemoComponent,
-        TlParentComponent,
+        TemplateChildComponent,
         EmptyComponent,
-        TlChildComponent,
+        TemplateParentComponent,
         MyHighlightDirective,
         MyBetterHighDirective,
         UnlessDirective,

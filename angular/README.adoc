@@ -1,0 +1,9 @@
+= README / Index
+
+* _event-demo_ : events
+* _selector-demo_ : selectors
+* `databinding-demo` : databinding
+* `template-demo`
+** `ng-content`
+** local reference
+** lifecycle hooks
