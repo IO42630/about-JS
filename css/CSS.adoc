@@ -2,6 +2,10 @@
 :toc:
 :toclevels: 4
 
+
+==== Margin vs Padding
+image:margin_v_padding.png[]
+
 {empty} +
 
 ==== Sources for CSS Declarations
