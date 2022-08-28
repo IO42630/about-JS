@@ -1,36 +1,36 @@
 = Services
+:toc:
 
-=== Injection
+==== About
+* 3 services
+** `Data` : just holds an `[]`
+** `Logging` : prints it's identifier and some message
+*** shows how `child` gets it's own instance because of override.
+** `Relay` : holds an `EventEmitter`, through which messages can be passed between components
 
-* configuration:
+{empty} +
+
+==== Injection
+* Config:
 - `@Injectable({providedIn: ...})` in Service
 - `@NgModule({providers: ...})` in Module
 - `@Component({providers: ...})` in Component
-* injection:
+* Injection:
 - the injection itself happens in the Component via `constructor` param.
 
 {empty} +
 
-=== Injection Hierarchy
-
+==== Hierarchy / Availability
 * services injected into an outer component are inherited to the nested component.
 * if provide an inherited service again, it is overridden
-** thus, a new instance is created and referenced.
-** see demo, where we have one `DataService` instance, and two `LoggingService` instances.
-* this leads also to the following behaviour of services provided in:
-** `AppModule` : available application-wide
-** `AppComponent` : available to all components, but not services
-** `Component` : available to component and children (if any).
-
-{empty} +
-
-=== Injection (Modules)
+** thus, a new instance is created and referenced (see `LoggingService`).
 
 |===
 | `providers` in  | available | injector used | usage
 
 | `AppModule` | app-wide | root injector | default
-| `AppComponent`, `Component` | component tree | component specific | if scoped
+| `AppComponent`,  | component tree, except services | component specific | if scoped
+| `Component` | component tree | component specific | if scoped
 | Eager-loaded Module | app-wide | root injector | avoid this
 | Lazy-loaded Module | in loaded module | child injector | if scoped
 |===
@@ -39,8 +39,7 @@
 
 {empty} +
 
-=== Magic Mock Web API
-
+==== Magic Mock Web API
 1. `InMemoryDbService.createDb()` defines some data store by returning `{xyz}`.
 1. by including `HttpClientInMemoryWebApiModule` in `app.module`, +
 we mock an endpoint at the canonical URL `api/xyz`.

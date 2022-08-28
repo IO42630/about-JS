@@ -1,29 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoggingService } from './logging.service';
 import { DataService } from './data.service';
-import { CommunicationService } from './communication.service';
+import { RelayService } from './relay.service';
 
 @Component({
     selector: 'app-s-child',
     template: `
-        <button (click)="onClick()">Child Click</button>
+        <button type="button" class="btn btn-light" (click)="onClick()">Push C to Data from Child</button>
     `,
-    providers: [LoggingService] //
+    providers: [LoggingService]
 })
 export class SChildComponent {
 
     constructor(
         private dataService: DataService, /* this constitutes an injection */
         private loggingService: LoggingService,
-        private communicationService: CommunicationService
+        private communicationService: RelayService
     ) {
         this.loggingService.caller = 'child';
-
-        this.communicationService.emitter.subscribe(payload => console.log('event received', payload));
+        this.communicationService.emitter.subscribe(payload => this.loggingService.logSome('received ' + payload));
     }
 
     onClick() {
-        this.dataService.data.push('S');
+        this.dataService.data.push('C');
         this.loggingService.logSome(this.dataService.data);
     }
 

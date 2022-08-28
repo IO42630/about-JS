@@ -6,6 +6,7 @@ export class LoggingService {
     caller: string;
 
     logSome(message: any) {
-        console.log('logging from ' + this.caller + ' ' + message);
+        console.log('Logging from ' + this.caller + ' [ ' + message + ' ]');
     }
+
 }

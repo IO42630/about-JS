@@ -43,26 +43,26 @@ export class RxjsDemoComponent implements OnInit, OnDestroy {
 
     intro() {
         console.clear();
-        // an ose emits events (can be done in many ways)
+        // an obs emits events (can be done in many ways)
         // a subscription is created by subscribing to an ose
         // an observer can be .completed (closed)
         // a subscription can be .unsubscribed
 
         // manually creating an Observable
-        let ole = new Observable((obs: Observer<any>) => {
+        let obsle = new Observable((obs: Observer<any>) => {
             obs.next('A');  // emitting event
             obs.next('B');  // emitting event
-            obs.complete(); // closes the ose // can be used as part of ose loop logic
+            obs.complete(); // closes the obs // can be used as part of ose loop logic
             obs.next('C');  // C is never emitted
         });
 
-        let sub = ole.subscribe(print); // print function will be called for each time the Observable emits a value.
-        sub = ole.subscribe(print); // the values are not exhausted. Rather this will print A B again.
+        let sub = obsle.subscribe(print); // print function will be called for each time the Observable emits a value.
+        sub = obsle.subscribe(print); // the values are not exhausted. Rather this will print A B again.
         sub.unsubscribe(); // it is good practice to unsubscribe after parsing the events.
-        sub = ole.subscribe(print); // however this does not prevent us from subscribing again.
+        sub = obsle.subscribe(print); // however this does not prevent us from subscribing again.
 
-        ole = of('hello');
-        sub = ole.subscribe(print); // prints word
+        obsle = of('hello');
+        sub = obsle.subscribe(print); // prints word
         sub.unsubscribe();
     }
 

@@ -1,5 +1,13 @@
 = RxJS
 
+* RxJS naming is dumb, here's how to make it work:
+* `Observable` ~ _watch me do it_
+** then provide lambda with `Observer => what will be witnessed`.
+* `Subject` ~ observe this
+** then add/push actions as we go.
+
+{empty} +
+
 * is a library for async using observable sequences.
 * core type `Observable`
 * satellite types:
@@ -10,7 +18,6 @@
 - map, filter, reduce, every
 
 ===== Observable
-
 * wraps data
 - can be subscribed to
 - subscriber will be notified
@@ -19,6 +26,5 @@
 - thus, should be called 'viewable'
 
 ===== Subject
-
-* can be used to replace `EventEmitter`
+* `EventEmitter extends Subject`
 

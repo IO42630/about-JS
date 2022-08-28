@@ -1,26 +1,30 @@
 import { Component } from '@angular/core';
 import { LoggingService } from './logging.service';
 import { DataService } from './data.service';
-import { CommunicationService } from './communication.service';
+import { RelayService } from './relay.service';
 
 @Component({
     selector: 'app-services-demo',
     template: `
         <app-s-child></app-s-child>
-        <button (click)="onClick()">Parent Click</button>
-        <button (click)="sendEvent()">Parent send Event</button>
+        <br>
+        <div class="btn-group-vertical mt-4">
+            <button type="button" class="btn btn-light" (click)="onClick()">Push P to Data from Parent</button>
+            <button type="button" class="btn btn-light" (click)="sendEvent()">Parent send Event</button>
+        </div>
+
     `,
-    providers: [LoggingService, DataService, CommunicationService]
+    providers: [LoggingService, DataService, RelayService]
 })
 export class SParentComponent {
 
     constructor(
-        private dataService: DataService,
+        private dataService: DataService, /* this constitutes injection */
         private loggingService: LoggingService,
-        private communicationService: CommunicationService
+        private communicationService: RelayService
     ) {
         this.loggingService.caller = 'parent';
-    } // this constitutes an injection
+    }
 
     onClick() {
         this.dataService.data.push('P');
@@ -28,7 +32,9 @@ export class SParentComponent {
     }
 
     sendEvent() {
-        this.communicationService.emitter.emit('payload');
+        const payload = this.dataService.data.toString();
+        this.loggingService.logSome('sending ' + payload);
+        this.communicationService.emitter.emit(payload);
     }
 
 }
