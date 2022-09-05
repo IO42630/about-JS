@@ -6,3 +6,7 @@
 */dist/
 /angular/.angular/
 /package-lock.json
+/typescript/*.js
+/typescript/*.js.map
+/typescript/functions/*.js
+/typescript/functions/*.js.map

@@ -1,6 +1,5 @@
-
-export class Arrays{
-  arr : string[] = [];
+export class Arrays {
+    public arr: string[] = [];
 }
 
-var arr : string[] = [];
+var arr: string[] = [];

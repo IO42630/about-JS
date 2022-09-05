@@ -8,7 +8,7 @@ let list: number[] = [1,2,3];
 let list2 : Array<number> = [1,2,3];
 
 let tuple : [string,number];
-tuple = ["hello", 7];
+tuple = ['hello', 7];
 // tuple = [1,2]; // Error
 
 enum Color{
