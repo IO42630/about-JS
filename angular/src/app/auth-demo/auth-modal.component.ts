@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Output, EventEmitter } from '@angular/core';
 import { AuthService } from './auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../../environments/environment';
@@ -6,12 +6,13 @@ import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-auth-modal',
   template: `
-    <ng-template #mymodal let-modal>
+    <div class="backdrop" (click)="onClose()"></div>
+    <div class="alert-box">
       <div class="modal-header">
         <h5 class="modal-title">Login</h5>
         <button
             class="btn btn-dark"
-            (click)="dismiss()">x
+            (click)="onClose()">x
         </button>
       </div>
       <div class="modal-body">
@@ -27,38 +28,34 @@ import { environment } from '../../environments/environment';
         </button>
         <button
             class="btn btn-dark"
-            (click)="dismiss()"
+            (click)="onClose()"
         >Cancel
         </button>
       </div>
-    </ng-template>
+    </div>>
   `,
   styles: []
 })
 export class AuthModalComponent {
 
-  hidden: true;
+  @Output() close = new EventEmitter<void>();
 
-  @ViewChild('mymodal') mymodal;
 
   constructor(
       private modalService: NgbModal,
       private auth: AuthService
   ) {
-    console.log('this is', environment.production);
+    console.log('this is prod: ', environment.production);
   }
 
-  open() {
-    this.modalService.open(this.mymodal, {ariaLabelledBy: 'modal-basic-title'});
-  }
 
   okButton() {
-    this.dismiss();
     this.auth.login();
+    this.onClose();
   }
 
-  dismiss() {
-    this.modalService.dismissAll();
+  onClose() {
+    this.close.emit();
   }
 
 }

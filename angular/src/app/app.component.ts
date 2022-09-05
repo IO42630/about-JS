@@ -5,8 +5,10 @@ import { AuthService } from './auth-demo/auth.service';
     selector: 'app-root',
     template: `
 
-        <app-auth-modal #modalx
-            [hidden]="auth.isAuthenticated()"></app-auth-modal>
+        <app-auth-modal
+            *ngIf="showLogin"
+            (close)="showLogin= false"
+        ></app-auth-modal>
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-2">
@@ -20,7 +22,7 @@ import { AuthService } from './auth-demo/auth.service';
                             (click)="auth.logout()">Logout
                         </button>
                         <button type="button" class="btn btn-danger" *ngIf="!auth.isAuthenticated()"
-                            (click)="modalx.open()">Login
+                            (click)="showLogin = true">Login
                         </button>
                     </ul>
                 </div>
@@ -33,8 +35,7 @@ import { AuthService } from './auth-demo/auth.service';
 })
 export class AppComponent {
 
-    @ViewChild('modalx')
-    modalx;
+    showLogin = false;
 
     constructor(
         public auth: AuthService
