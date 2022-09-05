@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-forms-bootstrap',
   templateUrl: 'forms-bootstrap.component.html',
   styles: []
 })
-export class FormsBootstrapComponent implements OnInit {
+export class FormsBootstrapComponent{
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  range = 50;
 
 }
