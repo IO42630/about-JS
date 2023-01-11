@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 
+/**
+ * Just paints a "blue" border around some @Input() string.
+ */
 @Component({
     selector: 'app-display',
     template: `

@@ -1,5 +1,11 @@
 = README / Index
 
+[cols="1,2"]
+|===
+| `doc` | many docs.
+| `src/app/event-demo` |
+|===
+
 * _event-demo_ : events
 * _selector-demo_ : selectors
 * `databinding-demo` : databinding

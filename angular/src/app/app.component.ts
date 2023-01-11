@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from './auth-demo/auth.service';
 
 @Component({
@@ -16,7 +16,7 @@ import { AuthService } from './auth-demo/auth.service';
                         <li class="nav-item" *ngFor="let entry of entries">
                             <!-- "active" is bootstrap specific -->
                             <!-- routerLinkActive applies class if current route contains routerLink -->
-                            <a class="nav-link fs-3" routerLink="{{entry.link}}" routerLinkActive="text-success">{{entry.text}}</a>
+                            <a class="nav-link fs-5" routerLink="{{entry.link}}" routerLinkActive="text-success">{{entry.text}}</a>
                         </li>
                         <button type="button" class="btn btn-success" *ngIf="auth.isAuthenticated()"
                             (click)="auth.logout()">Logout
@@ -46,6 +46,7 @@ export class AppComponent {
         { text: 'Event Demo', link: ['/event-demo'] }, /* alternative notation */
         { text: 'Selector Demo', link: '/selector-demo' },
         { text: 'Databinding Demo', link: '/data-binding-demo' },
+        { text: 'Directives Demo', link: '/directives-demo' },
         { text: 'Template Demo', link: '/template-demo' },
         { text: 'Services Demo', link: '/services-demo' },
         { text: 'Router Demo', link: '/router-demo' },

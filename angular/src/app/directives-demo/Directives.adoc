@@ -1,5 +1,6 @@
 
-==== Directives
+= Directives
+
 * For definition of directive, see Html.adoc
 * Angular adds 3 main types of directives.
 
